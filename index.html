@@ -16,15 +16,15 @@
     <form action="https://abhijit4u1.github.io/skbp.github.io/quiz.html" method="get" class="login">
       <p>
         <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required>
+<input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
       </p>
       <p>
         <label for="reg-no">Registration Number:</label><br>
-        <input type="text" id="reg-no" name="reg-no" required>
+<input type="hidden" name="reg-no" value="<?php echo $_POST['reg-no']; ?>">
       </p>
       <p>
         <label for="college-name">College Name:</label><br>
-        <input type="text" id="college-name" name="college-name" required>
+<input type="hidden" name="college-name" value="<?php echo $_POST['college-name']; ?>">
       </p>
       <p>
         <button type="submit">Login</button>
