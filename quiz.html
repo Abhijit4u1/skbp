@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the quiz */
+      .quiz {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .answer {
+        margin-bottom: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add a scoring mechanism to the quiz -->
+    <script>
+      var score = 0; // Initialize the score to 0
+
+      // Function to update the score
+      function updateScore(value) {
+        score += value;
+      }
+
+      // Function to display the results
+      function showResults() {
+        // Get the quiz container element
+        var quizContainer = document.getElementById("quiz");
+
+        // Remove the quiz questions
+        quizContainer.innerHTML = "";
+
+        // Add a message to display the score
+        quizContainer.innerHTML = "Your score: " + score + "/5";
+      }
+    </script>
+
+    <!-- Add a submit button to the quiz -->
+    <button onclick="showResults()">Submit</button>
+
+    <!-- Create a container for the quiz -->
+    <div id="quiz">
+      <!-- Add the quiz questions -->
+      <p class="question">What is the capital of France?</p>
+      <div class="answer">
+        <input type="radio" name="question1" value="0" onclick="updateScore(0)">Paris<br>
+        <input type="radio" name="question1" value="1" onclick="updateScore(1)">Madrid<br>
+        <input type="radio" name="question1" value="0" onclick="updateScore(0)">London<br>
+      </div>
+
+      <p class="question">What is the largest ocean in the world?</p>
+      <div class="answer">
+        <input type="radio" name="question2" value="1" onclick="updateScore(1)">Pacific Ocean<br>
+        <input type="radio" name="question2" value="0" onclick="updateScore(0)">Atlantic Ocean<br>
+        <input type="radio" name="question2" value="0" onclick="updateScore(0)">Indian Ocean<br>
+      </div>
+
+      <!-- Add the rest of the quiz questions -->
+    </div>
+  </body>
+</html>

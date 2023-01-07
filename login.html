@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the login page */
+      .login {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .form-control {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Create a login form -->
+    <form action="/quiz.html" method="post" class="login">
+      <p>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" class="form-control">
+      </p>
+      <p>
+        <label for="reg-no">Registration Number:</label><br>
+        <input type="text" id="reg-no" name="reg-no" class="form-control">
+      </p>
+      <p>
+        <label for="college-name">College Name:</label><br>
+        <input type="text" id="college-name" name="college-name" class="form-control">
+      </p>
+      <p>
+        <button type="submit">Login</button>
+      </p>
+    </form>
+  </body>
+</html>
