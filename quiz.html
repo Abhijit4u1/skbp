@@ -27,8 +27,8 @@
 <!-- Modify the quiz HTML file to show the name and reg no -->
 <script>
   var score = 0; // Initialize the score to 0
-  var name = "";
-  var regNo = "";
+  var name = document.querySelector('input[name="reg-no"]').value;
+  var regNo = document.querySelector('input[name="college-name"]').value;
 
   // Function to update the score
   function updateScore(value) {
