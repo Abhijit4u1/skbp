@@ -24,27 +24,32 @@
     </style>
   </head>
   <body>
-    <!-- Add a scoring mechanism to the quiz -->
-    <script>
-      var score = 0; // Initialize the score to 0
+<!-- Modify the quiz HTML file to show the name and reg no -->
+<script>
+  var score = 0; // Initialize the score to 0
+  var name = "";
+  var regNo = "";
 
-      // Function to update the score
-      function updateScore(value) {
-        score += value;
-      }
+  // Function to update the score
+  function updateScore(value) {
+    score += value;
+  }
 
-      // Function to display the results
-      function showResults() {
-        // Get the quiz container element
-        var quizContainer = document.getElementById("quiz");
+  // Function to display the results
+  function showResults() {
+    // Get the quiz container element
+    var quizContainer = document.getElementById("quiz");
 
-        // Remove the quiz questions
-        quizContainer.innerHTML = "";
+    // Remove the quiz questions
+    quizContainer.innerHTML = "";
 
-        // Add a message to display the score
-        quizContainer.innerHTML = "Your score: " + score + "/5";
-      }
-    </script>
+    // Add a message to display the score, name and reg no
+    quizContainer.innerHTML = "Your score: " + score + "/5" + "<br>" +
+                             "Name: " + name + "<br>" +
+                             "Registration Number: " + regNo;
+  }
+</script>
+
 
     <!-- Add a submit button to the quiz -->
     <button onclick="showResults()">Submit</button>
