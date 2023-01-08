@@ -3,17 +3,79 @@
     <style>
       /* Add some styling to the login page */
       .login {
+  font-family: Arial;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  width: 50%;
+  background-color: #f2f2f2; /* add a background color */
+}
+
+.login p {
+  font-size: 18px; /* increase the font size */
+  font-family: 'Roboto', sans-serif; /* use a more attractive font */
+}
+
+.login input {
+  padding: 10px; /* add some padding inside the input fields */
+  border-radius: 5px; /* round the corners of the input fields */
+  border: 1px solid #ccc; /* add a border to the input fields */
+  width: 100%; /* make the input fields take up the full width of the form */
+}
+
+.login button {
+  background-color: #4caf50; /* change the background color of the button */
+  color: white; /* change the text color of the button */
+  border-radius: 5px; /* round the corners of the button */
+  padding: 10px; /* add some padding to the button */
+  border: none; /* remove the default border of the button */
+  cursor: pointer
+      .error {
+        color: red;
+        font-size: 14px;
+      }
+
+      /* Add some styling to the quiz links */
+      .quiz-links {
         font-family: Arial;
         margin: 20px;
         padding: 20px;
         border: 1px solid #ccc;
         width: 50%;
       }
+
+      .quiz-link {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 18px;
+      }
+      footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+
     </style>
   </head>
+  <footer>
+    Designed and developed by <a href="#">Abhijit Dey</a>. To Contact me <a href="mailto:abhijit.ju@wbscte.ac.in"> Click here</a>.
+  </footer>
+  
   <body>
     <!-- Create a login form -->
-    <form action="https://abhijit4u1.github.io/skbp.github.io/quiz.html" method="get" class="login">
+    <form action="#" method="get" class="login" onsubmit="return validateLogin(event)">
+        <p>Welcome to the 8051 Quiz! Please enter your name, registration number, and college name to start:</p>
       <p>
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required>
@@ -29,6 +91,41 @@
       <p>
         <button type="submit">Login</button>
       </p>
+      <p class="error" id="error" style="display: none;"></p>
     </form>
-  </body>
-</html>
+
+    <!-- Create a container for the quiz links -->
+    <div class="quiz-links" style="display: none;">
+      <!-- Add a description for the quiz links -->
+      <p>Welcome to the 8051 Quiz! Please choose from the following quizzes to test your knowledge:</p>
+      
+      <!-- Add the quiz links -->
+      <a href="quiz1.html" class="quiz-link">Quiz 1: Basic 8051 Programming</a>
+      <a href="quiz2.html" class="quiz-link">Quiz 2: 8051 Memory Types and Addressing Modes</a>
+      <a href="quiz3.html" class="quiz-link">Quiz 3: 8051 Interrupts and Instruction Sets</a>
+    </div>
+
+    <!-- Add a script to validate the login form and display the quiz links -->
+    <script>
+
+function validateLogin(event) {
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
+  // Get the form input values
+  var name = document.getElementById("name").value;
+  var regNo = document.getElementById("reg-no").value;
+  var collegeName = document.getElementById("college-name").value;
+
+  // Check if the form input values are not blank
+  if (name !== "" && regNo !== "" && collegeName !== "") {
+    // Display the quiz links
+    document.querySelector(".quiz-links").style.display = "block";
+  } else {
+    // Display an error message
+    document.getElementById("error").innerHTML = "Please enter your name, registration number, and college name.";
+    document.getElementById("error").style.display = "block";
+  }
+}
+
+</script>

@@ -1,0 +1,300 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the quiz */
+      .quiz {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .quiz-form {
+       display: block;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .answer {
+        margin-bottom: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+  /*    p {
+//  font-size: 16px;
+//  font-family: Arial, sans-serif;
+//  color: #333;
+// } */
+#startButton
+ {
+  display: block;
+  margin: 0 auto; /* center the element horizontally */
+  text-align: center; /* center the text within the element */
+}
+#container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer {
+  background-color: #eee; /* add a light grey background color */
+  padding: 20px; /* add some padding to the footer */
+  text-align: center; /* center the text within the footer */
+}
+
+footer p {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0; /* remove the default margin for the paragraphs */
+}
+#timer {
+  /* Position the timer element in the top right corner */
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  /* Add a background color to the timer */
+  background-color: yellow;
+}
+
+
+#description {
+  color: blue;
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+
+}
+.results-message {
+  /* Add some styling for the results message */
+  font-size: 28px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+}
+
+
+
+    </style>
+  </head>
+  <footer>
+    <p>Designer: Abhijit Dey</p>
+    <p>Designation: Lecturer in Electrical Engineering, Sidhu Kanhu Birsa Polytechnic</p>
+  </footer>
+  <body>
+    <!-- Add a scoring mechanism to the quiz -->
+    <script>
+      var score = 0; // Initialize the score to 0
+
+      // Function to update the score
+      function updateScore(value) {
+        score += value;
+      }
+
+      // Function to display the results
+      function showResults() {
+        // Get the quiz container element
+        var quizContainer = document.getElementById("quiz");
+
+        // Remove the quiz questions
+        quizContainer.innerHTML = ""
+        
+
+        // Add a message to display the score
+        quizContainer.innerHTML ="<p class='results-message'>Congratulation! Your score is : " + score + "/5</p>";
+
+
+
+      }
+      
+
+    </script>
+    
+    <!-- Add a submit button to the quiz -->
+
+    <!-- Create a container for the quiz -->
+    <div id="container1">
+        <button id="startButton">Start Quiz</button>
+        <p id="description">This quiz is designed to test your knowledge of the 8051 microcontroller. It covers topics such as memory types, interrupts, and instruction sets. Good luck!</p>
+      
+    </div>
+    
+      
+    
+    <br><br>
+    <div id="timer"></div>
+    <form id="quizForm" class="quiz-form" style="display: none;">
+    <div id="quiz">
+      <!-- Add the quiz questions -->
+
+
+
+      <p class="question">What is the purpose of the ALE pin on the 8051 microcontroller?</p>
+      <div class="answer">
+        <input type="radio" name="question1" value="0" onclick="updateScore(0)">It is used as an output pin to generate a pulse for external devices.<br>
+        <input type="radio" name="question1" value="1" onclick="updateScore(1)">It is used as an input pin to latch the address of the instruction being executed.<br>
+        <input type="radio" name="question1" value="0" onclick="updateScore(0)">It is used as an input pin to reset the microcontroller.<br>
+        <input type="radio" name="question1" value="0" onclick="updateScore(0)">It is used as an output pin to generate a pulse for timing purposes.<br>
+      </div>
+      
+      <p class="question">Which of the following is NOT a type of memory in the 8051 microcontroller?</p>
+      <div class="answer">
+        <input type="radio" name="question2" value="0" onclick="updateScore(0)">ROM<br>
+        <input type="radio" name="question2" value="0" onclick="updateScore(0)">RAM<br>
+        <input type="radio" name="question2" value="0" onclick="updateScore(0)">EPROM<br>
+        <input type="radio" name="question2" value="0" onclick="updateScore(0)">EEPROM<br>
+      </div>
+
+      <p class="question">How many interrupt sources does the 8051 microcontroller have?</p>
+      <div class="answer">
+        <input type="radio" name="question3" value="0" onclick="updateScore(0)">1<br>
+        <input type="radio" name="question3" value="0" onclick="updateScore(0)">2<br>
+        <input type="radio" name="question3" value="1" onclick="updateScore(1)">3<br>
+        <input type="radio" name="question3" value="0" onclick="updateScore(0)">4<br>
+      </div>
+      
+      <p class="question">What is the maximum clock frequency for the 8051 microcontroller?</p>
+      <div class="answer">
+        <input type="radio" name="question4" value="1" onclick="updateScore(1)">4 MHz<br>
+        <input type="radio" name="question4" value="0" onclick="updateScore(0)">6 MHz<br>
+        <input type="radio" name="question4" value="0" onclick="updateScore(0)">8 MHz<br>
+      </div>
+
+      <p class="question">How many 8-bit registers does the 8051 microcontroller have?</p>
+      <div class="answer">
+        <input type="radio" name="question5" value="0" onclick="updateScore(0)">2<br>
+        <input type="radio" name="question5" value="1" onclick="updateScore(1)">4<br>
+        <input type="radio" name="question5" value="0" onclick="updateScore(0)">6<br>
+        <input type="radio" name="question5" value="0" onclick="updateScore(0)">8<br>
+      </div>
+      
+      <p class="question">What is the purpose of the PSW register in the 8051 microcontroller?</p>
+      <div class="answer">
+        <input type="radio" name="question6" value="1" onclick="updateScore(1)">It stores the status of the microcontroller's internal operations.<br>
+        <input type="radio" name="question6" value="0" onclick="updateScore(0)">It stores the result of arithmetic and logic operations.<br>
+        <input type="radio" name="question6" value="0" onclick="updateScore(0)">It stores the address of the next instruction to be executed.<br>
+        <input type="radio" name="question6" value="0" onclick="updateScore(0)">It stores the data being transferred between the microcontroller and external devices.<br>
+      </div>
+      
+      <p class="question">What is the maximum number of external devices that the 8051 microcontroller can communicate with?</p>
+      <div class="answer">
+        <input type="radio" name="question7" value="0" onclick="updateScore(0)">1<br>
+        <input type="radio" name="question7" value="0" onclick="updateScore(0)">2<br>
+        <input type="radio" name="question7" value="1" onclick="updateScore(1)">4<br>
+        <input type="radio" name="question7" value="0" onclick="updateScore(0)">8<br>
+      </div>
+
+
+      <p class="question">Which of the following is NOT a feature of the 8051 microcontroller?</p>
+      <div class="answer">
+        <input type="radio" name="question8" value="0" onclick="updateScore(0)">Harvard architecture<br>
+        <input type="radio" name="question8" value="0" onclick="updateScore(0)">Multiply and divide instructions<br>
+        <input type="radio" name="question8" value="0" onclick="updateScore(0)">Hardware multiplier<br>
+        <input type="radio" name="question8" value="0" onclick="updateScore(0)">16-bit timer<br>
+        <input type="radio" name="question8" value="1" onclick="updateScore(1)">On-chip oscillator<br>
+      </div>
+    
+
+      <p class="question">What is the purpose of the external data memory in the 8051 microcontroller?</p>
+      <div class="answer">
+        <input type="radio" name="question9" value="0" onclick="updateScore(0)">It stores the program being executed by the microcontroller.<br>
+        <input type="radio" name="question9" value="1" onclick="updateScore(1)">It stores the data being used by the microcontroller.<br>
+        <input type="radio" name="question9" value="0" onclick="updateScore(0)">It stores the result of arithmetic and logic operations.<br>
+        <input type="radio" name="question9" value="0" onclick="updateScore(0)">It stores the status of the microcontroller's internal operations.<br>
+      </div>
+      
+      <p class="question">What is the purpose of the stack in the 8051 microcontroller?</p>
+      <div class="answer">
+        <input type="radio" name="question10" value="0" onclick="updateScore(0)">It stores the data being transferred between the microcontroller and external devices.<br>
+        <input type="radio" name="question10" value="0" onclick="updateScore(0)">It stores the result of arithmetic and logic operations.<br>
+        <input type="radio" name="question10" value="0" onclick="updateScore(0)">It stores the address of the next instruction to be executed.<br>
+        <input type="radio" name="question10" value="1" onclick="updateScore(1)">It stores temporary data and the return address when a subroutine is called.<br>
+      </div>
+      
+      <button onclick="showResults()">Submit</button>
+      <!-- Add the rest of the quiz questions -->
+    </div>
+    
+    <script>
+        // Get start button and form elements
+        var startButton = document.getElementById("startButton");
+        var quizForm = document.getElementById("quizForm");
+        
+        // Add event listener to start button
+        startButton.addEventListener("click", function() {
+          // Check if the camera is on
+          navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+              // Camera is on, hide start button and show quiz form
+              startButton.style.display = "none";
+              quizForm.style.display = "block";
+              document.getElementById("description").style.display = "none";
+
+              // Set countdown timer
+              var timeLeft = 600; // 10 minutes
+              var timerId = setInterval(countdown, 1000);
+              
+              function countdown() {
+                if (timeLeft == 0) {
+                  clearTimeout(timerId);
+                  // Submit quiz when timer reaches 0
+                  document.getElementById("quizForm").submit();
+                } else {
+                  document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft + " seconds";
+                  timeLeft--;
+                }
+              }
+            })
+        })
+            .catch(function(error) {
+              // Camera is off, show error message
+              alert("Please enable your camera to start the quiz.");
+            
+            });
+            
+            </script>
+<!-- Create a container for the quiz link -->
+<div id="other-quiz-container" style="display: none;">
+    <!-- Create a link to the other quiz page -->
+    <a href="/other-quiz-page.html">Quiz2</a>
+    <a href="/other-quiz-page.html">Quiz3</a>
+
+  </div>
+  
+  <script>
+    // Function to show the other quiz link
+    function showOtherQuizLink() {
+      // Get the other quiz container element
+      var otherQuizContainer = document.getElementById("other-quiz-container");
+  
+      // Show the other quiz link
+      otherQuizContainer.style.display = "block";
+    }
+  
+    // Function to display the results
+    function showResults() {
+      // Get the quiz container element
+      var quizContainer = document.getElementById("quiz");
+  
+      // Remove the quiz questions
+      quizContainer.innerHTML = "";
+  
+      // Add a message to display the score
+      quizContainer.innerHTML = "Your score: " + score + "/5";
+  
+      // Show the other quiz link
+      showOtherQuizLink();
+    }
+  </script>
+  
+
+</body>
+
+</html>
