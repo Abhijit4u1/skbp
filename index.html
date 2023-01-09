@@ -29,8 +29,9 @@
   border-radius: 5px; /* round the corners of the button */
   padding: 10px; /* add some padding to the button */
   border: none; /* remove the default border of the button */
-  cursor: pointer
-      .error {
+  cursor: pointer;
+}
+  .error {
         color: red;
         font-size: 14px;
       }
@@ -90,6 +91,8 @@ footer {
       </p>
       <p>
         <button type="submit">Login</button>
+        <button type="button" onclick="loginAsAnonymous()">Login as anonymous</button>
+
       </p>
       <p class="error" id="error" style="display: none;"></p>
     </form>
@@ -126,6 +129,11 @@ function validateLogin(event) {
     document.getElementById("error").innerHTML = "Please enter your name, registration number, and college name.";
     document.getElementById("error").style.display = "block";
   }
+}
+function loginAsAnonymous() {
+  localStorage.setItem("anonymous", true);
+  // Redirect the user to the quiz page
+  window.location.href = "https://abhijit4u1.github.io/skbp.github.io/Quiz2.html";
 }
 
 </script>

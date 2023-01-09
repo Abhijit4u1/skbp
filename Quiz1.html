@@ -72,12 +72,18 @@ footer p {
   text-align: center;
 
 }
+
+button {
+  padding: 10px;
+  font-size: 15px;
+}
+
 .results-message {
-  /* Add some styling for the results message */
-  font-size: 28px;
-  font-weight: bold;
-  color: green;
   text-align: center;
+  font-size: 24px;
+  color: #4caf50; /* change the text color */
+  font-family: 'Roboto', sans-serif; /* use a more attractive font */
+  padding: 20px; /* add some padding around the text */
 }
 
 
@@ -90,38 +96,35 @@ footer p {
   </footer>
   <body>
     <!-- Add a scoring mechanism to the quiz -->
+    
     <script>
       var score = 0; // Initialize the score to 0
-
+    
       // Function to update the score
       function updateScore(value) {
         score += value;
       }
-
+    
       // Function to display the results
       function showResults() {
         // Get the quiz container element
         var quizContainer = document.getElementById("quiz");
-
+    
         // Remove the quiz questions
-        quizContainer.innerHTML = ""
-        
-
+        quizContainer.innerHTML = "";
+    
         // Add a message to display the score
-        quizContainer.innerHTML ="<p class='results-message'>Congratulation! Your score is : " + score + "/5</p>";
-
-
+        quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/5</p>";
 
       }
-      
-
     </script>
+    
     
     <!-- Add a submit button to the quiz -->
 
     <!-- Create a container for the quiz -->
     <div id="container1">
-        <button id="startButton">Start Quiz</button>
+        <button id="startButton">Start Quiz 1</button>
         <p id="description">This quiz is designed to test your knowledge of the 8051 microcontroller. It covers topics such as memory types, interrupts, and instruction sets. Good luck!</p>
       
     </div>
@@ -230,8 +233,8 @@ footer p {
         // Add event listener to start button
         startButton.addEventListener("click", function() {
           // Check if the camera is on
-          navigator.mediaDevices.getUserMedia({ video: true })
-            .then(function(stream) {
+         // navigator.mediaDevices.getUserMedia({ video: true }) //turning off camera
+          //  .then(function(stream) {
               // Camera is on, hide start button and show quiz form
               startButton.style.display = "none";
               quizForm.style.display = "block";
@@ -251,7 +254,7 @@ footer p {
                   timeLeft--;
                 }
               }
-            })
+           // })
         })
             .catch(function(error) {
               // Camera is off, show error message
@@ -263,8 +266,8 @@ footer p {
 <!-- Create a container for the quiz link -->
 <div id="other-quiz-container" style="display: none;">
     <!-- Create a link to the other quiz page -->
-    <a href="/other-quiz-page.html">Quiz2</a>
-    <a href="/other-quiz-page.html">Quiz3</a>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz2.html"> Quiz2  </a>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz3.html"> Quiz3  </a>
 
   </div>
   
@@ -287,7 +290,7 @@ footer p {
       quizContainer.innerHTML = "";
   
       // Add a message to display the score
-      quizContainer.innerHTML = "Your score: " + score + "/5";
+      quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/10</p>";
   
       // Show the other quiz link
       showOtherQuizLink();
