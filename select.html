@@ -125,7 +125,7 @@
         const topic = document.getElementById("topicDropdown").value;
 
         // You can customize the quiz URLs based on your structure
-        const quizURL = `quiz_${subject}_${topic}.html`;
+const quizURL = `quiz_${subject}_${topic.split(' ')[0]}.html`;
 
         // Redirect to the quiz page
         window.location.href = quizURL;
