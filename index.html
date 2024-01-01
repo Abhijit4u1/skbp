@@ -1,140 +1,145 @@
-<html>
-  <head>
-    <style>
-      /* Add some styling to the login page */
-      .login {
-  font-family: Arial;
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  width: 50%;
-  background-color: #f2f2f2; /* add a background color */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-.login p {
-  font-size: 18px; /* increase the font size */
-  font-family: 'Roboto', sans-serif; /* use a more attractive font */
-}
+    .container {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      padding: 20px;
+      width: 50%;
+      text-align: center;
+    }
 
-.login input {
-  padding: 10px; /* add some padding inside the input fields */
-  border-radius: 5px; /* round the corners of the input fields */
-  border: 1px solid #ccc; /* add a border to the input fields */
-  width: 100%; /* make the input fields take up the full width of the form */
-}
+    .container p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
 
-.login button {
-  background-color: #4caf50; /* change the background color of the button */
-  color: white; /* change the text color of the button */
-  border-radius: 5px; /* round the corners of the button */
-  padding: 10px; /* add some padding to the button */
-  border: none; /* remove the default border of the button */
-  cursor: pointer;
-}
-  .error {
-        color: red;
-        font-size: 14px;
-      }
+    .container input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 100%;
+      margin-top: 10px;
+    }
 
-      /* Add some styling to the quiz links */
-      .quiz-links {
-        font-family: Arial;
-        margin: 20px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        width: 50%;
-      }
+    .container button {
+      background-color: #4caf50;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
 
-      .quiz-link {
-        display: block;
-        margin-bottom: 20px;
-        font-size: 18px;
-      }
-      footer {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-}
+    .container button:hover {
+      background-color: #45a049;
+    }
 
-footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  text-align: center;
-}
+    .error {
+      color: red;
+      font-size: 14px;
+    }
 
+    .quiz-links-container {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      padding: 20px;
+      width: 50%;
+      text-align: center;
+      display: none;
+    }
 
-    </style>
-  </head>
-  <footer>
-    Designed and developed by <a href="#">Abhijit Dey</a>. To Contact me <a href="mailto:abhijit.ju@wbscte.ac.in"> Click here</a>.
-  </footer>
-  
-  <body>
-    <!-- Create a login form -->
-    <form action="#" method="get" class="login" onsubmit="return validateLogin(event)">
-        <p>Welcome to this Quiz Module (V1.0) On Syllabus of West Bengal State Council of Technical & Vocational Education and Skill Development
-(Technical Education Division)! Please enter your name, registration number, and college name to start:</p>
-      <p>
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required>
-      </p>
-      <p>
-        <label for="reg-no">Registration Number:</label><br>
-        <input type="text" id="reg-no" name="reg-no" required>
-      </p>
-      <p>
-        <label for="college-name">College Name:</label><br>
-        <input type="text" id="college-name" name="college-name" required>
-      </p>
-      <p>
-        <button type="submit">Login</button>
-        <button type="button" onclick="loginAsAnonymous()">Login as anonymous</button>
+    .quiz-links-container p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
 
-      </p>
+    .quiz-link {
+      display: block;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .quiz-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Create a login form container -->
+  <div class="container">
+    <form action="#" method="get" onsubmit="return validateLogin(event)">
+      <p>Welcome to this Quiz Module (V1.0) On Syllabus of West Bengal State Council of Technical & Vocational Education and Skill Development (Technical Education Division)! Please enter your name, registration number, and college name to start:</p>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      <label for="reg-no">Registration Number:</label><br>
+      <input type="text" id="reg-no" name="reg-no" required><br>
+      <label for="college-name">College Name:</label><br>
+      <input type="text" id="college-name" name="college-name" required><br>
+      <button type="submit">Login</button>
+      <button type="button" onclick="loginAsAnonymous()">Login as anonymous</button>
       <p class="error" id="error" style="display: none;"></p>
     </form>
+  </div>
 
-    <!-- Create a container for the quiz links -->
-    <div class="quiz-links" style="display: none;">
-      <!-- Add a description for the quiz links -->
-      <p>Welcome to this Quiz Module (V1.0). Please choose from the following quizzes  to test your knowledge:</p>
-      
-      <!-- Add the quiz links -->
-      <a href="https://abhijit4u1.github.io/skbp.github.io/selector.html" class="quiz-link">Visit to MCQ Quiz Bank Page</a>
-    <!--  <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz2.html" class="quiz-link">Quiz 2: 8051 Memory Types and Addressing Modes</a>
-      <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz3.html" class="quiz-link">Quiz 3: 8051 Interrupts and Instruction Sets</a> -->
-    </div>
+  <!-- Create a container for the quiz links -->
+  <div class="quiz-links-container">
+    <p>Welcome to this Quiz Module (V1.0). Please choose from the following quizzes to test your knowledge:</p>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/selector.html" class="quiz-link">Visit to MCQ Quiz Bank Page</a>
+  </div>
 
-    <!-- Add a script to validate the login form and display the quiz links -->
-    <script>
+  <footer>
+    Designed and developed by <a href="#">Abhijit Dey</a>. To Contact me <a href="mailto:abhijit.ju@wbscte.ac.in">Click here</a>.
+  </footer>
 
-function validateLogin(event) {
-  // Prevent the default form submission behavior
-  event.preventDefault();
+  <!-- Add a script to validate the login form and display the quiz links -->
+  <script>
+    function validateLogin(event) {
+      event.preventDefault();
 
-  // Get the form input values
-  var name = document.getElementById("name").value;
-  var regNo = document.getElementById("reg-no").value;
-  var collegeName = document.getElementById("college-name").value;
+      var name = document.getElementById("name").value;
+      var regNo = document.getElementById("reg-no").value;
+      var collegeName = document.getElementById("college-name").value;
 
-  // Check if the form input values are not blank
-  if (name !== "" && regNo !== "" && collegeName !== "") {
-    // Display the quiz links
-    document.querySelector(".quiz-links").style.display = "block";
-  } else {
-    // Display an error message
-    document.getElementById("error").innerHTML = "Please enter your name, registration number, and college name.";
-    document.getElementById("error").style.display = "block";
-  }
-}
-function loginAsAnonymous() {
-  localStorage.setItem("anonymous", true);
-  // Redirect the user to the quiz page
-  window.location.href = "https://abhijit4u1.github.io/skbp.github.io/select.html";
-}
+      if (name !== "" && regNo !== "" && collegeName !== "") {
+        document.querySelector(".quiz-links-container").style.display = "block";
+      } else {
+        document.getElementById("error").innerHTML = "Please enter your name, registration number, and college name.";
+        document.getElementById("error").style.display = "block";
+      }
+    }
 
-</script>
+    function loginAsAnonymous() {
+      localStorage.setItem("anonymous", true);
+      window.location.href = "https://abhijit4u1.github.io/skbp.github.io/select.html";
+    }
+  </script>
+</body>
+</html>
