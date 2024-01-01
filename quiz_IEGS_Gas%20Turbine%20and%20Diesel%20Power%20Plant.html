@@ -1,0 +1,337 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the quiz */
+      .quiz {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .quiz-form {
+       display: block;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .answer {
+        margin-bottom: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+  /*    p {
+//  font-size: 16px;
+//  font-family: Arial, sans-serif;
+//  color: #333;
+// } */
+#startButton
+ {
+  display: block;
+  margin: 0 auto; /* center the element horizontally */
+  text-align: center; /* center the text within the element */
+}
+#container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer {
+  background-color: #eee; /* add a light grey background color */
+  padding: 20px; /* add some padding to the footer */
+  text-align: center; /* center the text within the footer */
+}
+
+footer p {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0; /* remove the default margin for the paragraphs */
+}
+#timer {
+  /* Position the timer element in the top right corner */
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  /* Add a background color to the timer */
+  background-color: yellow;
+}
+
+
+#description {
+  color: blue;
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+
+}
+
+button {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.results-message {
+  text-align: center;
+  font-size: 24px;
+  color: #4caf50; /* change the text color */
+  font-family: 'Roboto', sans-serif; /* use a more attractive font */
+  padding: 20px; /* add some padding around the text */
+}
+
+
+
+    </style>
+  </head>
+  <footer>
+    <p>Designer: Abhijit Dey</p>
+    <p>Designation: Lecturer in Electrical Engineering, Sidhu Kanhu Birsa Polytechnic</p>
+  </footer>
+  <body>
+    <!-- Add a scoring mechanism to the quiz -->
+    
+    <script>
+      var score = 0; // Initialize the score to 0
+    
+      // Function to update the score
+      function updateScore(value) {
+        score += value;
+      }
+    
+      // Function to display the results
+      function showResults() {
+        // Get the quiz container element
+        var quizContainer = document.getElementById("quiz");
+    
+        // Remove the quiz questions
+        quizContainer.innerHTML = "";
+    
+        // Add a message to display the score
+        quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/10</p>";
+
+      }
+    </script>
+    
+    
+    <!-- Add a submit button to the quiz -->
+
+    <!-- Create a container for the quiz -->
+    <div id="container1">
+        <button id="startButton">Start Quiz </button>
+        <p id="description">This quiz is designed to test your knowledge of IEGS subject. It covers topics related to Diesel and Gas based power plant. Good luck!</p>
+      
+    </div>
+    
+      
+    
+    <br><br>
+    <div id="timer"></div>
+    <form id="quizForm" class="quiz-form" style="display: none;">
+    <div id="quiz">
+      <!-- Add the quiz questions -->
+
+
+
+      <p class="question">1. What is the primary fuel used in gas turbine power plants?</p>
+<div class="answer">
+   <input type="radio" name="question1" value="1" onclick="updateScore(1)">Natural Gas.<br>
+   <input type="radio" name="question1" value="0" onclick="updateScore(0)">Diesel.<br>
+   <input type="radio" name="question1" value="0" onclick="updateScore(0)">Coal.<br>
+   <input type="radio" name="question1" value="0" onclick="updateScore(0)">Hydrogen.<br>
+</div>
+      
+<p class="question">2. What is the main advantage of a gas turbine power plant?</p>
+<div class="answer">
+   <input type="radio" name="question2" value="1" onclick="updateScore(1)">High efficiency in simple cycle and quick start-up.<br>
+   <input type="radio" name="question2" value="0" onclick="updateScore(0)">Low initial cost.<br>
+   <input type="radio" name="question2" value="0" onclick="updateScore(0)">Longer life compared to other power plants.<br>
+   <input type="radio" name="question2" value="0" onclick="updateScore(0)">Low fuel consumption.<br>
+</div>
+<p class="question">3. What is the primary advantage of an open cycle gas turbine over a closed cycle?</p>
+<div class="answer">
+   <input type="radio" name="question3" value="1" onclick="updateScore(1)">Simplicity and lower cost.<br>
+   <input type="radio" name="question3" value="0" onclick="updateScore(0)">Higher efficiency.<br>
+   <input type="radio" name="question3" value="0" onclick="updateScore(0)">Reduced environmental impact.<br>
+   <input type="radio" name="question3" value="0" onclick="updateScore(0)">Greater fuel flexibility.<br>
+</div>
+      
+<p class="question">4. What is the function of a combustion chamber in a gas turbine?</p>
+<div class="answer">
+   <input type="radio" name="question4" value="1" onclick="updateScore(1)">Mixing fuel with compressed air and igniting it to produce high-temperature gases.<br>
+   <input type="radio" name="question4" value="0" onclick="updateScore(0)">Cooling the compressed air before entering the turbine.<br>
+   <input type="radio" name="question4" value="0" onclick="updateScore(0)">Generating electricity.<br>
+   <input type="radio" name="question4" value="0" onclick="updateScore(0)">Controlling the speed of the turbine.<br>
+</div>
+<p class="question">5. What is the working principle of a gas turbine?</p>
+<div class="answer">
+   <input type="radio" name="question5" value="1" onclick="updateScore(1)">Air is compressed, mixed with fuel, ignited, and the high-temperature gases are expanded through a turbine to produce power.<br>
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">Fuel is burned directly to produce electricity.<br>
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">Water is boiled to produce steam that drives a turbine.<br>
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">Electricity is generated using magnetic induction.<br>
+</div>
+<<p class="question">6. What is the major disadvantage of a gas turbine power plant?</p>
+<div class="answer">
+   <input type="radio" name="question6" value="1" onclick="updateScore(1)">Lower thermal efficiency compared to other power plants.<br>
+   <input type="radio" name="question6" value="0" onclick="updateScore(0)">High maintenance cost.<br>
+   <input type="radio" name="question6" value="0" onclick="updateScore(0)">Limited fuel options.<br>
+   <input type="radio" name="question6" value="0" onclick="updateScore(0)">Environmental pollution.<br>
+</div>
+
+<p class="question">7. Which element in a gas turbine power plant is responsible for converting kinetic energy into mechanical energy?</p>
+<div class="answer">
+   <input type="radio" name="question7" value="1" onclick="updateScore(1)">Turbine.<br>
+   <input type="radio" name="question7" value="0" onclick="updateScore(0)">Compressor.<br>
+   <input type="radio" name="question7" value="0" onclick="updateScore(0)">Combustor.<br>
+   <input type="radio" name="question7" value="0" onclick="updateScore(0)">Alternator.<br>
+</div>
+<p class="question">8. In a gas turbine power plant, what is the primary function of the combustion chamber?</p>
+<div class="answer">
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">To compress air.<br>
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">To generate electricity.<br>
+   <input type="radio" name="question8" value="1" onclick="updateScore(1)">To convert chemical energy into thermal energy.<br>
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">To cool the turbine.<br>
+</div>
+
+<p class="question">9. What is the typical fuel used in gas turbine power plants in West Bengal?</p>
+<div class="answer">
+   <input type="radio" name="question9" value="1" onclick="updateScore(1)">Natural gas.<br>
+   <input type="radio" name="question9" value="0" onclick="updateScore(0)">Coal.<br>
+   <input type="radio" name="question9" value="0" onclick="updateScore(0)">Diesel.<br>
+   <input type="radio" name="question9" value="0" onclick="updateScore(0)">Biomass.<br>
+</div>
+
+<p class="question">10. Which factor contributes to the efficiency of a gas turbine power plant?</p>
+<div class="answer">
+   <input type="radio" name="question10" value="0" onclick="updateScore(0)">High ambient temperature.<br>
+   <input type="radio" name="question10" value="0" onclick="updateScore(0)">Low compressor efficiency.<br>
+   <input type="radio" name="question10" value="1" onclick="updateScore(1)">High pressure ratio.<br>
+   <input type="radio" name="question10" value="0" onclick="updateScore(0)">Low turbine speed.<br>
+</div>
+
+<p class="question">11. What is the primary advantage of co-generation in power plants?</p>
+<div class="answer">
+   <input type="radio" name="question11" value="0" onclick="updateScore(0)">Reduced fuel consumption.<br>
+   <input type="radio" name="question11" value="0" onclick="updateScore(0)">Increased greenhouse gas emissions.<br>
+   <input type="radio" name="question11" value="1" onclick="updateScore(1)">Higher overall efficiency.<br>
+   <input type="radio" name="question11" value="0" onclick="updateScore(0)">Lower initial cost.<br>
+</div>
+
+<p class="question">12. Which type of fuel is commonly used in diesel power plants?</p>
+<div class="answer">
+   <input type="radio" name="question12" value="0" onclick="updateScore(0)">Natural gas.<br>
+   <input type="radio" name="question12" value="1" onclick="updateScore(1)">Diesel oil.<br>
+   <input type="radio" name="question12" value="0" onclick="updateScore(0)">Coal.<br>
+   <input type="radio" name="question12" value="0" onclick="updateScore(0)">Biodiesel.<br>
+</div>
+<p class="question">13. Which element in a diesel electric power plant is responsible for converting mechanical energy into electrical energy?</p>
+   <div class="answer">
+      <input type="radio" name="question13" value="1" onclick="updateScore(1)">Generator or Alternator.<br>
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">Compressor.<br>
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">Turbine.<br>
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">Combustor.<br>
+   </div>
+   <p class="question">14. What is the purpose of a governor in a diesel electric power plant?</p>
+   <div class="answer">
+      <input type="radio" name="question14" value="1" onclick="updateScore(1)">To control the speed of the engine and maintain a constant output frequency.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">To regulate the temperature of the combustion chamber.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">To compress air before entering the combustion chamber.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">To control the flow of fuel.<br>
+   </div>
+   <p class="question">15. What is the function of a turbocharger in a diesel engine?</p>
+   <div class="answer">
+      <input type="radio" name="question15" value="1" onclick="updateScore(1)">To increase the efficiency of the combustion process by compressing air before it enters the engine.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">To cool the engine and prevent overheating.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">To increase the speed of the engine.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">To regulate the fuel flow in the engine.<br>
+   </div>
+
+
+   
+      
+      <button onclick="showResults()">Submit</button>
+      <!-- Add the rest of the quiz questions -->
+    </div>
+    
+    <script>
+        // Get start button and form elements
+        var startButton = document.getElementById("startButton");
+        var quizForm = document.getElementById("quizForm");
+        
+        // Add event listener to start button
+        startButton.addEventListener("click", function() {
+          // Check if the camera is on
+         // navigator.mediaDevices.getUserMedia({ video: true }) //turning off camera
+          //  .then(function(stream) {
+              // Camera is on, hide start button and show quiz form
+              startButton.style.display = "none";
+              quizForm.style.display = "block";
+              document.getElementById("description").style.display = "none";
+
+              // Set countdown timer
+              var timeLeft = 600; // 10 minutes
+              var timerId = setInterval(countdown, 1000);
+              
+              function countdown() {
+                if (timeLeft == 0) {
+                  clearTimeout(timerId);
+                  // Submit quiz when timer reaches 0
+                  document.getElementById("quizForm").submit();
+                } else {
+                  document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft + " seconds";
+                  timeLeft--;
+                }
+              }
+           // })
+        })
+            .catch(function(error) {
+              // Camera is off, show error message
+              alert("Please enable your camera to start the quiz.");
+            
+            });
+            
+            </script>
+<!-- Create a container for the quiz link -->
+<div id="other-quiz-container" style="display: none;">
+    <!-- Create a link to the other quiz page -->
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz2.html"> Quiz2  </a>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz3.html"> Quiz3  </a>
+
+  </div>
+  
+  <script>
+    // Function to show the other quiz link
+    function showOtherQuizLink() {
+      // Get the other quiz container element
+      var otherQuizContainer = document.getElementById("other-quiz-container");
+  
+      // Show the other quiz link
+      otherQuizContainer.style.display = "block";
+    }
+  
+    // Function to display the results
+    function showResults() {
+      // Get the quiz container element
+      var quizContainer = document.getElementById("quiz");
+  
+      // Remove the quiz questions
+      quizContainer.innerHTML = "";
+  
+      // Add a message to display the score
+      quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/15</p>";
+  
+      // Show the other quiz link
+      showOtherQuizLink();
+    }
+  </script>
+  
+
+</body>
+
+</html>

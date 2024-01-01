@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Question Bank</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<h3>MCQ Question bank based on the Syllabus of West Bengal State Council of Technical & Vocational Education and Skill Development (Technical Education Division). For any query, suggestion or typo, please inform me so it can be rectified.</h3>
+
+<!-- Subject and Topic Dropdowns -->
+<label for="subjectDropdown">Select Subject:</label>
+<select id="subjectDropdown" onchange="updateTopics()">
+    <option value="MCA">MCA</option>
+    <option value="IEGS">IEGS</option>
+    <!--<option value="history">History</option>-->
+    <!-- Add more subjects as needed -->
+</select>
+
+<label for="topicDropdown">Select Topic:</label>
+<select id="topicDropdown">
+    <!-- Topics will be dynamically populated based on the selected subject -->
+</select>
+
+<!-- Quiz Button -->
+<button id="quizButton" onclick="redirectToQuiz()">Start Practicing</button>
+
+<script>
+    // Sample topics for each subject
+    const topics = {
+        MCA: ["Level1:memory types, interrupts, and instruction sets", "Level2:memory types, interrupts, and instruction sets", "Level3:memory types, interrupts, and instruction sets: Level 3"],
+        IEGS: ["Coal Based Thermal Power Plant", "Nuclear Power Plant", "Gas Turbine and Diesel Power Plant","Hydel Power Plant","Economics generation of Power Plant"],
+       // history: ["Ancient History", "Medieval History", "Modern History"]
+        // Add more topics as needed
+    };
+
+    // Function to update the topic dropdown based on the selected subject
+    function updateTopics() {
+        const subjectDropdown = document.getElementById("subjectDropdown");
+        const topicDropdown = document.getElementById("topicDropdown");
+        const selectedSubject = subjectDropdown.value;
+
+        // Clear previous options
+        topicDropdown.innerHTML = "";
+
+        // Populate topic dropdown based on the selected subject
+        topics[selectedSubject].forEach(topic => {
+            const option = document.createElement("option");
+            option.value = topic;
+            option.textContent = topic;
+            topicDropdown.appendChild(option);
+        });
+
+        // Enable or disable the quiz button based on the selected subject and topic
+        const quizButton = document.getElementById("quizButton");
+        quizButton.disabled = topicDropdown.options.length === 0;
+    }
+
+    // Function to redirect to the selected quiz page
+    function redirectToQuiz() {
+        const subject = document.getElementById("subjectDropdown").value;
+        const topic = document.getElementById("topicDropdown").value;
+
+        // You can customize the quiz URLs based on your structure
+        const quizURL = `quiz_${subject}_${topic}.html`;
+
+        // Redirect to the quiz page
+        window.location.href = quizURL;
+    }
+
+    // Initialize the topic dropdown on page load
+    updateTopics();
+</script>
+
+<footer>
+    Designed and developed by <a href="#">Abhijit Dey</a>. To contact me <a href="mailto:abhijit.ju@wbscte.ac.in">Click here</a>.
+</footer>
+
+</body>
+</html>

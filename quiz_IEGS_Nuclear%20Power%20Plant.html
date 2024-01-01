@@ -1,0 +1,333 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the quiz */
+      .quiz {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .quiz-form {
+       display: block;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .answer {
+        margin-bottom: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+  /*    p {
+//  font-size: 16px;
+//  font-family: Arial, sans-serif;
+//  color: #333;
+// } */
+#startButton
+ {
+  display: block;
+  margin: 0 auto; /* center the element horizontally */
+  text-align: center; /* center the text within the element */
+}
+#container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer {
+  background-color: #eee; /* add a light grey background color */
+  padding: 20px; /* add some padding to the footer */
+  text-align: center; /* center the text within the footer */
+}
+
+footer p {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0; /* remove the default margin for the paragraphs */
+}
+#timer {
+  /* Position the timer element in the top right corner */
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  /* Add a background color to the timer */
+  background-color: yellow;
+}
+
+
+#description {
+  color: blue;
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+
+}
+
+button {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.results-message {
+  text-align: center;
+  font-size: 24px;
+  color: #4caf50; /* change the text color */
+  font-family: 'Roboto', sans-serif; /* use a more attractive font */
+  padding: 20px; /* add some padding around the text */
+}
+
+
+
+    </style>
+  </head>
+  <footer>
+    <p>Designer: Abhijit Dey</p>
+    <p>Designation: Lecturer in Electrical Engineering, Sidhu Kanhu Birsa Polytechnic</p>
+  </footer>
+  <body>
+    <!-- Add a scoring mechanism to the quiz -->
+    
+    <script>
+      var score = 0; // Initialize the score to 0
+    
+      // Function to update the score
+      function updateScore(value) {
+        score += value;
+      }
+    
+      // Function to display the results
+      function showResults() {
+        // Get the quiz container element
+        var quizContainer = document.getElementById("quiz");
+    
+        // Remove the quiz questions
+        quizContainer.innerHTML = "";
+    
+        // Add a message to display the score
+        quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/10</p>";
+
+      }
+    </script>
+    
+    
+    <!-- Add a submit button to the quiz -->
+
+    <!-- Create a container for the quiz -->
+    <div id="container1">
+        <button id="startButton">Start Quiz </button>
+        <p id="description">This quiz is designed to test your knowledge of IEGS subject. It covers topics related to Nuclear based power plant. Good luck!</p>
+      
+    </div>
+    
+      
+    
+    <br><br>
+    <div id="timer"></div>
+    <form id="quizForm" class="quiz-form" style="display: none;">
+    <div id="quiz">
+      <!-- Add the quiz questions -->
+
+
+
+      <p class="question">1. What is the typical efficiency range of a Nuclear Power Plant?</p>
+   <div class="answer">
+      <input type="radio" name="question1" value="0" onclick="updateScore(0)">10-20%.<br>
+      <input type="radio" name="question1" value="0" onclick="updateScore(0)">30-40%.<br>
+      <input type="radio" name="question1" value="1" onclick="updateScore(1)">30-35%.<br>
+      <input type="radio" name="question1" value="0" onclick="updateScore(0)">40-50%.<br>
+   </div>
+      
+   <p class="question">2. What is the overall efficiency of a Nuclear Power Plant if it has a thermal efficiency of 35% and an electrical efficiency of 40%?</p>
+   <div class="answer">
+      <input type="radio" name="question2" value="0" onclick="updateScore(0)">7%.<br>
+      <input type="radio" name="question2" value="1" onclick="updateScore(1)">14%.<br>
+      <input type="radio" name="question2" value="0" onclick="updateScore(0)">28%.<br>
+      <input type="radio" name="question2" value="0" onclick="updateScore(0)">20%.<br>
+   </div>
+
+   <p class="question">3. If a Nuclear Power Plant has a thermal power input of 4500 MW and an electrical output of 1500 MW, what is its thermal efficiency?</p>
+   <div class="answer">
+      <input type="radio" name="question3" value="0" onclick="updateScore(0)">25%.<br>
+      <input type="radio" name="question3" value="1" onclick="updateScore(1)">33.33%.<br>
+      <input type="radio" name="question3" value="0" onclick="updateScore(0)">50%.<br>
+      <input type="radio" name="question3" value="0" onclick="updateScore(0)">20%.<br>
+   </div>
+      
+      <p class="question">4. Explain the concept of Half-Life period in the context of nuclear decay.</p>
+      <div class="answer">
+         <input type="radio" name="question4" value="1" onclick="updateScore(1)">Half-life is the time required for half of a radioactive substance to decay, crucial for safety and waste management.<br>
+         <input type="radio" name="question4" value="0" onclick="updateScore(0)">Half-life refers to the time it takes for a nuclear reactor to operate at half its capacity.<br>
+         <input type="radio" name="question4" value="0" onclick="updateScore(0)">Half-life has no relevance to nuclear reactions.<br>
+         <input type="radio" name="question4" value="0" onclick="updateScore(0)">Half-life is the time needed for a reactor to undergo fission.<br>
+      </div>
+      <p class="question">5. What is the function of a Moderator in a Nuclear Reactor?</p>
+<div class="answer">
+   <input type="radio" name="question5" value="1" onclick="updateScore(1)">To slow down neutrons and enhance the probability of nuclear fission reactions.<br>
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">To control the flow of coolant in the reactor.<br>
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">To shield the reactor from thermal radiation.<br>
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">To regulate the temperature of the core.<br>
+</div>
+<p class="question">6. What is the primary purpose of Control Rods in a Nuclear Reactor?</p>
+   <div class="answer">
+      <input type="radio" name="question6" value="1" onclick="updateScore(1)">To absorb neutrons and control the rate of nuclear fission reactions.<br>
+      <input type="radio" name="question6" value="0" onclick="updateScore(0)">To facilitate the flow of coolant in the reactor.<br>
+      <input type="radio" name="question6" value="0" onclick="updateScore(0)">To shield the reactor from thermal radiation.<br>
+      <input type="radio" name="question6" value="0" onclick="updateScore(0)">To regulate the temperature of the core.<br>
+   </div>
+   <p class="question">7. What is the Thermal Shielding in a Nuclear Reactor designed to prevent?</p>
+   <div class="answer">
+      <input type="radio" name="question7" value="0" onclick="updateScore(0)">It prevents nuclear fission reactions.<br>
+      <input type="radio" name="question7" value="1" onclick="updateScore(1)">It prevents excessive heat from reaching the reactor vessel and surroundings.<br>
+      <input type="radio" name="question7" value="0" onclick="updateScore(0)">It prevents the release of radioactive waste.<br>
+      <input type="radio" name="question7" value="0" onclick="updateScore(0)">It prevents the escape of coolant from the reactor.<br>
+   </div>
+   <p class="question">8. Explain the role of a Reflector in a Nuclear Reactor.</p>
+   <div class="answer">
+      <input type="radio" name="question8" value="0" onclick="updateScore(0)">A reflector is used to absorb excess neutrons in the core.<br>
+      <input type="radio" name="question8" value="0" onclick="updateScore(0)">A reflector controls the temperature of the core.<br>
+      <input type="radio" name="question8" value="0" onclick="updateScore(0)">A reflector moderates the speed of neutrons.<br>
+      <input type="radio" name="question8" value="1" onclick="updateScore(1)">A reflector reflects neutrons back into the core, enhancing the probability of fission reactions.<br>
+   </div>
+   <p class="question">9. What distinguishes Fissile materials from Fertile materials in the context of nuclear fuels?</p>
+   <div class="answer">
+      <input type="radio" name="question9" value="1" onclick="updateScore(1)">Fissile materials can sustain a chain reaction, while fertile materials require conversion to fissile materials.<br>
+      <input type="radio" name="question9" value="0" onclick="updateScore(0)">Fissile materials are used as reflectors, while fertile materials absorb neutrons.<br>
+      <input type="radio" name="question9" value="0" onclick="updateScore(0)">Fertile materials are used in control rods, while fissile materials act as moderators.<br>
+      <input type="radio" name="question9" value="0" onclick="updateScore(0)">Fissile materials absorb excess neutrons, while fertile materials sustain chain reactions.<br>
+   </div>
+   <p class="question">10. Which material is commonly used as a Control Rod in nuclear reactors?</p>
+   <div class="answer">
+      <input type="radio" name="question10" value="1" onclick="updateScore(1)">Boron or Cadmium.<br>
+      <input type="radio" name="question10" value="0" onclick="updateScore(0)">Uranium.<br>
+      <input type="radio" name="question10" value="0" onclick="updateScore(0)">Lead.<br>
+      <input type="radio" name="question10" value="0" onclick="updateScore(0)">Aluminum.<br>
+   </div>
+   <p class="question">11. What is the common material used as a Moderator in nuclear reactors?</p>
+   <div class="answer">
+      <input type="radio" name="question11" value="1" onclick="updateScore(1)">Graphite or Heavy Water (Deuterium).<br>
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">Lead.<br>
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">Boron.<br>
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">Aluminum.<br>
+   </div>
+
+<p class="question">12. Which equipment is responsible for removing suspended particles from flue gases in a coal-based thermal power plant?</p>
+<div class="answer">
+   <input type="radio" name="question12" value="0" onclick="updateScore(0)">Condenser<br>
+   <input type="radio" name="question12" value="0" onclick="updateScore(0)">Super Heater<br>
+   <input type="radio" name="question12" value="1" onclick="updateScore(1)">Electrostatic Precipitator (ESP)<br>
+   <input type="radio" name="question12" value="0" onclick="updateScore(0)">Feed Water Heater<br>
+</div>
+<p class="question">13. Which variant of Uranium is commonly used as fuel in nuclear reactors?</p>
+<div class="answer">
+   <input type="radio" name="question13" value="1" onclick="updateScore(1)">Uranium-235.<br>
+   <input type="radio" name="question13" value="0" onclick="updateScore(0)">Uranium-238.<br>
+   <input type="radio" name="question13" value="0" onclick="updateScore(0)">Uranium-233.<br>
+   <input type="radio" name="question13" value="0" onclick="updateScore(0)">Plutonium-239.<br>
+</div>
+<p class="question">14. Which materials are commonly used as Nuclear Fuels in nuclear reactors?</p>
+   <div class="answer">
+      <input type="radio" name="question14" value="1" onclick="updateScore(1)">Uranium-235, Uranium-233, and Plutonium-239.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">Boron and Cadmium.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">Graphite and Heavy Water.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">Lead and Aluminum.<br>
+   </div>
+   <p class="question">15. Which component of a Nuclear Reactor is responsible for slowing down neutrons?</p>
+   <div class="answer">
+      <input type="radio" name="question15" value="1" onclick="updateScore(1)">Moderator.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">Control Rod.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">Reflector.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">Thermal Shielding.<br>
+   </div>  
+
+   
+      
+      <button onclick="showResults()">Submit</button>
+      <!-- Add the rest of the quiz questions -->
+    </div>
+    
+    <script>
+        // Get start button and form elements
+        var startButton = document.getElementById("startButton");
+        var quizForm = document.getElementById("quizForm");
+        
+        // Add event listener to start button
+        startButton.addEventListener("click", function() {
+          // Check if the camera is on
+         // navigator.mediaDevices.getUserMedia({ video: true }) //turning off camera
+          //  .then(function(stream) {
+              // Camera is on, hide start button and show quiz form
+              startButton.style.display = "none";
+              quizForm.style.display = "block";
+              document.getElementById("description").style.display = "none";
+
+              // Set countdown timer
+              var timeLeft = 600; // 10 minutes
+              var timerId = setInterval(countdown, 1000);
+              
+              function countdown() {
+                if (timeLeft == 0) {
+                  clearTimeout(timerId);
+                  // Submit quiz when timer reaches 0
+                  document.getElementById("quizForm").submit();
+                } else {
+                  document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft + " seconds";
+                  timeLeft--;
+                }
+              }
+           // })
+        })
+            .catch(function(error) {
+              // Camera is off, show error message
+              alert("Please enable your camera to start the quiz.");
+            
+            });
+            
+            </script>
+<!-- Create a container for the quiz link -->
+<div id="other-quiz-container" style="display: none;">
+    <!-- Create a link to the other quiz page -->
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz2.html"> Quiz2  </a>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz3.html"> Quiz3  </a>
+
+  </div>
+  
+  <script>
+    // Function to show the other quiz link
+    function showOtherQuizLink() {
+      // Get the other quiz container element
+      var otherQuizContainer = document.getElementById("other-quiz-container");
+  
+      // Show the other quiz link
+      otherQuizContainer.style.display = "block";
+    }
+  
+    // Function to display the results
+    function showResults() {
+      // Get the quiz container element
+      var quizContainer = document.getElementById("quiz");
+  
+      // Remove the quiz questions
+      quizContainer.innerHTML = "";
+  
+      // Add a message to display the score
+      quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/10</p>";
+  
+      // Show the other quiz link
+      showOtherQuizLink();
+    }
+  </script>
+  
+
+</body>
+
+</html>

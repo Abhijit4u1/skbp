@@ -1,0 +1,336 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the quiz */
+      .quiz {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .quiz-form {
+       display: block;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .answer {
+        margin-bottom: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+  /*    p {
+//  font-size: 16px;
+//  font-family: Arial, sans-serif;
+//  color: #333;
+// } */
+#startButton
+ {
+  display: block;
+  margin: 0 auto; /* center the element horizontally */
+  text-align: center; /* center the text within the element */
+}
+#container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer {
+  background-color: #eee; /* add a light grey background color */
+  padding: 20px; /* add some padding to the footer */
+  text-align: center; /* center the text within the footer */
+}
+
+footer p {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0; /* remove the default margin for the paragraphs */
+}
+#timer {
+  /* Position the timer element in the top right corner */
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  /* Add a background color to the timer */
+  background-color: yellow;
+}
+
+
+#description {
+  color: blue;
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+
+}
+
+button {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.results-message {
+  text-align: center;
+  font-size: 24px;
+  color: #4caf50; /* change the text color */
+  font-family: 'Roboto', sans-serif; /* use a more attractive font */
+  padding: 20px; /* add some padding around the text */
+}
+
+
+
+    </style>
+  </head>
+  <footer>
+    <p>Designer: Abhijit Dey</p>
+    <p>Designation: Lecturer in Electrical Engineering, Sidhu Kanhu Birsa Polytechnic</p>
+  </footer>
+  <body>
+    <!-- Add a scoring mechanism to the quiz -->
+    
+    <script>
+      var score = 0; // Initialize the score to 0
+    
+      // Function to update the score
+      function updateScore(value) {
+        score += value;
+      }
+    
+      // Function to display the results
+      function showResults() {
+        // Get the quiz container element
+        var quizContainer = document.getElementById("quiz");
+    
+        // Remove the quiz questions
+        quizContainer.innerHTML = "";
+    
+        // Add a message to display the score
+        quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/15</p>";
+
+      }
+    </script>
+    
+    
+    <!-- Add a submit button to the quiz -->
+
+    <!-- Create a container for the quiz -->
+    <div id="container1">
+        <button id="startButton">Start Quiz </button>
+        <p id="description">This quiz is designed to test your knowledge of IEGS subject. It covers topics related to Hydel power plant. Good luck!</p>
+      
+    </div>
+    
+      
+    
+    <br><br>
+    <div id="timer"></div>
+    <form id="quizForm" class="quiz-form" style="display: none;">
+    <div id="quiz">
+      <!-- Add the quiz questions -->
+
+
+
+      <p class="question">1. Which type of water turbine is suitable for low head, high flow conditions?</p>
+      <div class="answer">
+         <input type="radio" name="question1" value="1" onclick="updateScore(1)">Kaplan Turbine.<br>
+         <input type="radio" name="question1" value="0" onclick="updateScore(0)">Francis Turbine.<br>
+         <input type="radio" name="question1" value="0" onclick="updateScore(0)">Pelton Turbine.<br>
+         <input type="radio" name="question1" value="0" onclick="updateScore(0)">Crossflow Turbine.<br>
+      </div>
+      
+      <p class="question">What is the formula for calculating the efficiency of a hydroelectric plant?</p>
+      <div class="answer">
+         <input type="radio" name="question2" value="1" onclick="updateScore(1)">Efficiency = (Power Output / Power Input) × 100%.<br>
+         <input type="radio" name="question2" value="0" onclick="updateScore(0)">Efficiency = Voltage / Current.<br>
+         <input type="radio" name="question2" value="0" onclick="updateScore(0)">Efficiency = Mass × Velocity.<br>
+         <input type="radio" name="question2" value="0" onclick="updateScore(0)">Efficiency = Resistance × Current².<br>
+      </div>
+      <p class="question">3. Which of the following is an important large hydro power plant in India?</p>
+      <div class="answer">
+         <input type="radio" name="question3" value="1" onclick="updateScore(1)">Tehri Dam.<br>
+         <input type="radio" name="question3" value="0" onclick="updateScore(0)">Sardar Sarovar Dam.<br>
+         <input type="radio" name="question3" value="0" onclick="updateScore(0)">Bhakra Nangal Dam.<br>
+         <input type="radio" name="question3" value="0" onclick="updateScore(0)">Hirakud Dam.<br>
+      </div>
+      
+      <p class="question">4. What is the role of a penstock in a large hydro power plant?</p>
+      <div class="answer">
+         <input type="radio" name="question4" value="1" onclick="updateScore(1)">It transports water from the reservoir to the turbines.<br>
+         <input type="radio" name="question4" value="0" onclick="updateScore(0)">It stores water for power generation.<br>
+         <input type="radio" name="question4" value="0" onclick="updateScore(0)">It controls water flow during floods.<br>
+         <input type="radio" name="question4" value="0" onclick="updateScore(0)">It cools the turbines.<br>
+      </div>
+      <p class="question">5. What is the purpose of a surge tank in a large hydro power plant?</p>
+      <div class="answer">
+         <input type="radio" name="question5" value="1" onclick="updateScore(1)">To absorb pressure fluctuations and prevent damage to the penstock.<br>
+         <input type="radio" name="question5" value="0" onclick="updateScore(0)">To store excess water for emergencies.<br>
+         <input type="radio" name="question5" value="0" onclick="updateScore(0)">To control water flow to the turbines.<br>
+         <input type="radio" name="question5" value="0" onclick="updateScore(0)">To cool the turbines.<br>
+      </div>
+      <p class="question">6. Which type of water turbine is known for its high efficiency in a wide range of flow conditions?</p>
+      <div class="answer">
+         <input type="radio" name="question6" value="1" onclick="updateScore(1)">Francis Turbine.<br>
+         <input type="radio" name="question6" value="0" onclick="updateScore(0)">Pelton Turbine.<br>
+         <input type="radio" name="question6" value="0" onclick="updateScore(0)">Kaplan Turbine.<br>
+         <input type="radio" name="question6" value="0" onclick="updateScore(0)">Crossflow Turbine.<br>
+      </div>
+      <p class="question">7. Which type of water turbine is suitable for high head, low flow conditions?</p>
+      <div class="answer">
+         <input type="radio" name="question7" value="1" onclick="updateScore(1)">Pelton Turbine.<br>
+         <input type="radio" name="question7" value="0" onclick="updateScore(0)">Francis Turbine.<br>
+         <input type="radio" name="question7" value="0" onclick="updateScore(0)">Kaplan Turbine.<br>
+         <input type="radio" name="question7" value="0" onclick="updateScore(0)">Crossflow Turbine.<br>
+      </div>
+      <p class="question">8. Which type of water turbine is suitable for low head, high flow conditions?</p>
+<div class="answer">
+   <input type="radio" name="question8" value="1" onclick="updateScore(1)">Kaplan Turbine.<br>
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">Francis Turbine.<br>
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">Pelton Turbine.<br>
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">Crossflow Turbine.<br>
+</div>
+<p class="question">9. What is a potential disadvantage of large hydro power plants?</p>
+   <div class="answer">
+      <input type="radio" name="question9" value="1" onclick="updateScore(1)">Displacement of local communities and ecosystems due to dam construction.<br>
+      <input type="radio" name="question9" value="0" onclick="updateScore(0)">Minimal environmental impact.<br>
+      <input type="radio" name="question9" value="0" onclick="updateScore(0)">Low initial cost.<br>
+      <input type="radio" name="question9" value="0" onclick="updateScore(0)">Unlimited fuel supply.<br>
+         </div>
+         <p class="question">10. Which state in India is home to the Bhakra Nangal Dam?</p>
+   <div class="answer">
+      <input type="radio" name="question10" value="1" onclick="updateScore(1)">Punjab.<br>
+      <input type="radio" name="question10" value="0" onclick="updateScore(0)">Maharashtra.<br>
+      <input type="radio" name="question10" value="0" onclick="updateScore(0)">Gujarat.<br>
+      <input type="radio" name="question10" value="0" onclick="updateScore(0)">Himachal Pradesh.<br>
+   </div>
+   <p class="question">11. Which river is the Sardar Sarovar Dam located on?</p>
+   <div class="answer">
+      <input type="radio" name="question11" value="1" onclick="updateScore(1)">Narmada.<br>
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">Yamuna.<br>
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">Ganges.<br>
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">Godavari.<br>
+   </div>
+   <p class="question">12. Which river is the Hirakud Dam located on?</p>
+   <div class="answer">
+      <input type="radio" name="question12" value="1" onclick="updateScore(1)">Mahanadi.<br>
+      <input type="radio" name="question12" value="0" onclick="updateScore(0)">Yamuna.<br>
+      <input type="radio" name="question12" value="0" onclick="updateScore(0)">Krishna.<br>
+      <input type="radio" name="question12" value="0" onclick="updateScore(0)">Godavari.<br>
+   </div>
+   <p class="question">13. What is the primary advantage of a pumped storage plant in terms of energy storage?</p>
+   <div class="answer">
+      <input type="radio" name="question13" value="1" onclick="updateScore(1)">It allows for the storage of excess electricity during periods of low demand for later use during peak demand.<br>
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">It provides a continuous source of power.<br>
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">It requires less land than conventional hydro plants.<br>
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">It has lower construction costs.<br>
+   </div>
+
+   <p class="question">14. If a hydroelectric plant has a head of 100 meters, a flow rate of 50 cubic meters per second, and an efficiency of 80%, what is the power output?</p>
+   <div class="answer">
+      <input type="radio" name="question14" value="1" onclick="updateScore(1)">400 MW.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">200 MW.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">100 MW.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">50 MW.<br>
+   </div>
+
+   <p class="question">15. Which state in India is home to the Bhakra Nangal Dam?</p>
+   <div class="answer">
+      <input type="radio" name="question15" value="1" onclick="updateScore(1)">Punjab.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">Maharashtra.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">Gujarat.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">Himachal Pradesh.<br>
+   </div>
+
+
+
+
+   
+      
+      <button onclick="showResults()">Submit</button>
+      <!-- Add the rest of the quiz questions -->
+    </div>
+    
+    <script>
+        // Get start button and form elements
+        var startButton = document.getElementById("startButton");
+        var quizForm = document.getElementById("quizForm");
+        
+        // Add event listener to start button
+        startButton.addEventListener("click", function() {
+          // Check if the camera is on
+         // navigator.mediaDevices.getUserMedia({ video: true }) //turning off camera
+          //  .then(function(stream) {
+              // Camera is on, hide start button and show quiz form
+              startButton.style.display = "none";
+              quizForm.style.display = "block";
+              document.getElementById("description").style.display = "none";
+
+              // Set countdown timer
+              var timeLeft = 600; // 10 minutes
+              var timerId = setInterval(countdown, 1000);
+              
+              function countdown() {
+                if (timeLeft == 0) {
+                  clearTimeout(timerId);
+                  // Submit quiz when timer reaches 0
+                  document.getElementById("quizForm").submit();
+                } else {
+                  document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft + " seconds";
+                  timeLeft--;
+                }
+              }
+           // })
+        })
+            .catch(function(error) {
+              // Camera is off, show error message
+              alert("Please enable your camera to start the quiz.");
+            
+            });
+            
+            </script>
+<!-- Create a container for the quiz link -->
+<div id="other-quiz-container" style="display: none;">
+    <!-- Create a link to the other quiz page -->
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz2.html"> Quiz2  </a>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz3.html"> Quiz3  </a>
+
+  </div>
+  
+  <script>
+    // Function to show the other quiz link
+    function showOtherQuizLink() {
+      // Get the other quiz container element
+      var otherQuizContainer = document.getElementById("other-quiz-container");
+  
+      // Show the other quiz link
+      otherQuizContainer.style.display = "block";
+    }
+  
+    // Function to display the results
+    function showResults() {
+      // Get the quiz container element
+      var quizContainer = document.getElementById("quiz");
+  
+      // Remove the quiz questions
+      quizContainer.innerHTML = "";
+  
+      // Add a message to display the score
+      quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/15</p>";
+  
+      // Show the other quiz link
+      showOtherQuizLink();
+    }
+  </script>
+  
+
+</body>
+
+</html>

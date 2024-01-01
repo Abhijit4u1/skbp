@@ -1,0 +1,296 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the quiz */
+      .quiz {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .quiz-form {
+       display: block;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .answer {
+        margin-bottom: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+  /*    p {
+//  font-size: 16px;
+//  font-family: Arial, sans-serif;
+//  color: #333;
+// } */
+#startButton
+ {
+  display: block;
+  margin: 0 auto; /* center the element horizontally */
+  text-align: center; /* center the text within the element */
+}
+#container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer {
+  background-color: #eee; /* add a light grey background color */
+  padding: 20px; /* add some padding to the footer */
+  text-align: center; /* center the text within the footer */
+}
+
+footer p {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0; /* remove the default margin for the paragraphs */
+}
+#timer {
+  /* Position the timer element in the top right corner */
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  /* Add a background color to the timer */
+  background-color: yellow;
+}
+
+
+#description {
+  color: blue;
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+
+}
+
+button {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.results-message {
+  text-align: center;
+  font-size: 24px;
+  color: #4caf50; /* change the text color */
+  font-family: 'Roboto', sans-serif; /* use a more attractive font */
+  padding: 20px; /* add some padding around the text */
+}
+
+
+
+    </style>
+  </head>
+  <footer>
+    <p>Designer: Abhijit Dey</p>
+    <p>Designation: Lecturer in Electrical Engineering, Sidhu Kanhu Birsa Polytechnic</p>
+  </footer>
+  <body>
+    <!-- Add a scoring mechanism to the quiz -->
+    
+    <script>
+      var score = 0; // Initialize the score to 0
+    
+      // Function to update the score
+      function updateScore(value) {
+        score += value;
+      }
+    
+      // Function to display the results
+      function showResults() {
+        // Get the quiz container element
+        var quizContainer = document.getElementById("quiz");
+    
+        // Remove the quiz questions
+        quizContainer.innerHTML = "";
+    
+        // Add a message to display the score
+        quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/15</p>";
+
+      }
+    </script>
+    
+    
+    <!-- Add a submit button to the quiz -->
+
+    <!-- Create a container for the quiz -->
+    <div id="container1">
+        <button id="startButton">Start Quiz </button>
+        <p id="description">This quiz is designed to test your knowledge of IEGS subject. It covers topics related to Hydel power plant. Good luck!</p>
+      
+    </div>
+    
+      
+    
+    <br><br>
+    <div id="timer"></div>
+    <form id="quizForm" class="quiz-form" style="display: none;">
+    <div id="quiz">
+      <!-- Add the quiz questions -->
+
+
+
+      <p class="question">1.If a power station has a maximum demand of 100 MW and an annual energy output of 50,000 MWh, calculate the Load Factor.</p>
+      <div class="answer">
+        <input type="radio" name="question1" value="1" onclick="updateScore(1)">Load Factor = (Energy Output / (Maximum Demand * Hours in a year)) * 100<br>
+        <input type="radio" name="question1" value="0" onclick="updateScore(0)">Load Factor = (Maximum Demand / Energy Output) * 100<br>
+        <input type="radio" name="question1" value="0" onclick="updateScore(0)">Load Factor = (Energy Output / Maximum Demand) * 100<br>
+        <input type="radio" name="question1" value="0" onclick="updateScore(0)">Load Factor = (Maximum Demand * Hours in a year / Energy Output) * 100<br>
+      
+        <p class="question">2. Define "Load Duration Curve" in the context of power systems.</p>
+        <div class="answer">
+           <input type="radio" name="question2" value="1" onclick="updateScore(1)">A curve representing the relationship between the time and the load demand on a power system.<br>
+           <input type="radio" name="question2" value="0" onclick="updateScore(0)">A curve showing the duration of power plant operations.<br>
+           <input type="radio" name="question2" value="0" onclick="updateScore(0)">A curve depicting the load factor of a power station.<br>
+           <input type="radio" name="question2" value="0" onclick="updateScore(0)">A curve indicating the diversity factor of a power system.<br>
+        </div>
+        <p class="question">3. Explain the concept of "Plant Use Factor" in power generation economics.</p>
+        <div class="answer">
+           <input type="radio" name="question3" value="1" onclick="updateScore(1)">It represents the ratio of the actual energy produced by a plant to the maximum energy it could produce if operated continuously at its rated capacity.<br>
+           <input type="radio" name="question3" value="0" onclick="updateScore(0)">It is the ratio of the demand factor to the load factor.<br>
+           <input type="radio" name="question3" value="0" onclick="updateScore(0)">It indicates the ratio of fixed costs to variable costs in power generation.<br>
+           <input type="radio" name="question3" value="0" onclick="updateScore(0)">It represents the efficiency of a power plant.<br>
+        </div>
+        <p class="question">4. How does "Diversity Factor" impact the cost of generation in a power system?</p>
+        <div class="answer">
+           <input type="radio" name="question4" value="1" onclick="updateScore(1)">A higher diversity factor reduces the need for excess capacity and lowers the overall cost of generation.<br>
+           <input type="radio" name="question4" value="0" onclick="updateScore(0)">Diversity factor has no impact on the cost of generation.<br>
+           <input type="radio" name="question4" value="0" onclick="updateScore(0)">A higher diversity factor increases the need for excess capacity, leading to higher generation costs.<br>
+           <input type="radio" name="question4" value="0" onclick="updateScore(0)">Diversity factor is directly proportional to the fuel cost of power plants.<br>
+        </div>
+        <p class="question">5. What is the key characteristic of a "Three-Part Tariff System" in power distribution?</p>
+        <div class="answer">
+           <input type="radio" name="question5" value="1" onclick="updateScore(1)">It includes charges based on fixed costs, variable costs, and a consumer-specific component.<br>
+           <input type="radio" name="question5" value="0" onclick="updateScore(0)">It charges a flat rate for all consumers regardless of usage.<br>
+           <input type="radio" name="question5" value="0" onclick="updateScore(0)">It applies different rates for different time periods during the day.<br>
+           <input type="radio" name="question5" value="0" onclick="updateScore(0)">It charges only based on the peak demand.<br>
+        </div>
+        <p class="question">6. How does a "Block Rate Tariff System" work, and what type of consumers does it benefit?</p>
+        <div class="answer">
+           <input type="radio" name="question6" value="1" onclick="updateScore(1)">It involves dividing the total consumption into blocks, and each block is charged at a different rate, encouraging conservation and benefiting low-usage consumers.<br>
+           <input type="radio" name="question6" value="0" onclick="updateScore(0)">It charges a fixed rate for all consumers regardless of usage.<br>
+           <input type="radio" name="question6" value="0" onclick="updateScore(0)">It applies different rates for different time periods during the day.<br>
+           <input type="radio" name="question6" value="0" onclick="updateScore(0)">It charges based on the peak demand.<br>
+        </div>
+        <p class="question">7.What factors are considered when choosing the size and number of units in an interconnected power system?</p>
+        <div class="answer">
+           <input type="radio" name="question7" value="1" onclick="updateScore(1)">Load demand, redundancy, and the need for flexibility in power generation.<br>
+           <input type="radio" name="question7" value="0" onclick="updateScore(0)">Only load demand and maximum demand.<br>
+           <input type="radio" name="question7" value="0" onclick="updateScore(0)">Fuel type and availability.<br>
+           <input type="radio" name="question7" value="0" onclick="updateScore(0)">Geographical location of power stations.<br>
+        </div>
+        <p class="question">8.How does "Demand Factor" impact the cost of generation, and what is its formula?</p>
+        <div class="answer">
+          <input type="radio" name="question8" value="1" onclick="updateScore(1)">Demand Factor is the ratio of the maximum demand to the connected load, influencing the sizing of power stations.<br>
+          <input type="radio" name="question8" value="0" onclick="updateScore(0)">Demand Factor has no impact on the cost of generation.<br>
+          <input type="radio" name="question8" value="0" onclick="updateScore(0)">Demand Factor determines the load factor.<br>
+          <input type="radio" name="question8" value="0" onclick="updateScore(0)">Demand Factor is the ratio of the average demand to the maximum demand.<br>
+        </div>
+        <p class="question">9. Differentiate between "Brownout" and "Blackout" in terms of duration and impact.</p>
+        <div class="answer">
+          <input type="radio" name="question9" value="1" onclick="updateScore(1)">Brownout is a partial and temporary reduction in voltage, while Blackout is a complete and prolonged loss of power.<br>
+          <input type="radio" name="question9" value="0" onclick="updateScore(0)">Brownout and Blackout have the same duration and impact.<br>
+          <input type="radio" name="question9" value="0" onclick="updateScore(0)">Brownout and Blackout both result in a complete loss of power.<br>
+          <input type="radio" name="question9" value="0" onclick="updateScore(0)">Brownout is a more severe form of blackout.<br>
+        </div>
+        <p class="question">10. How many regional grids exist in India, and what are their names?</p>
+        <div class="answer">
+           <input type="radio" name="question10" value="1" onclick="updateScore(1)">India has five regional grids: Northern, Southern, Western, Eastern, and North-Eastern.<br>
+           <input type="radio" name="question10" value="0" onclick="updateScore(0)">India has three regional grids: North, South, and West.<br>
+           <input type="radio" name="question10" value="0" onclick="updateScore(0)">India has six regional grids: North, South, West, East, Central, and North-East.<br>
+           <input type="radio" name="question10" value="0" onclick="updateScore(0)">India has four regional grids: Northern, Southern, Western, and Eastern.<br>
+        </div>
+   
+
+
+   
+      
+      <button onclick="showResults()">Submit</button>
+      <!-- Add the rest of the quiz questions -->
+    </div>
+    
+    <script>
+        // Get start button and form elements
+        var startButton = document.getElementById("startButton");
+        var quizForm = document.getElementById("quizForm");
+        
+        // Add event listener to start button
+        startButton.addEventListener("click", function() {
+          // Check if the camera is on
+         // navigator.mediaDevices.getUserMedia({ video: true }) //turning off camera
+          //  .then(function(stream) {
+              // Camera is on, hide start button and show quiz form
+              startButton.style.display = "none";
+              quizForm.style.display = "block";
+              document.getElementById("description").style.display = "none";
+
+              // Set countdown timer
+              var timeLeft = 600; // 10 minutes
+              var timerId = setInterval(countdown, 1000);
+              
+              function countdown() {
+                if (timeLeft == 0) {
+                  clearTimeout(timerId);
+                  // Submit quiz when timer reaches 0
+                  document.getElementById("quizForm").submit();
+                } else {
+                  document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft + " seconds";
+                  timeLeft--;
+                }
+              }
+           // })
+        })
+            .catch(function(error) {
+              // Camera is off, show error message
+              alert("Please enable your camera to start the quiz.");
+            
+            });
+            
+            </script>
+<!-- Create a container for the quiz link -->
+<div id="other-quiz-container" style="display: none;">
+    <!-- Create a link to the other quiz page -->
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz2.html"> Quiz2  </a>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz3.html"> Quiz3  </a>
+
+  </div>
+  
+  <script>
+    // Function to show the other quiz link
+    function showOtherQuizLink() {
+      // Get the other quiz container element
+      var otherQuizContainer = document.getElementById("other-quiz-container");
+  
+      // Show the other quiz link
+      otherQuizContainer.style.display = "block";
+    }
+  
+    // Function to display the results
+    function showResults() {
+      // Get the quiz container element
+      var quizContainer = document.getElementById("quiz");
+  
+      // Remove the quiz questions
+      quizContainer.innerHTML = "";
+  
+      // Add a message to display the score
+      quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/15</p>";
+  
+      // Show the other quiz link
+      showOtherQuizLink();
+    }
+  </script>
+  
+
+</body>
+
+</html>

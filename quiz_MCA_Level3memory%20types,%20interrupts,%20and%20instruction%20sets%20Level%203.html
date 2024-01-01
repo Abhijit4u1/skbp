@@ -1,0 +1,297 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the quiz */
+      .quiz {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .quiz-form {
+       display: block;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .answer {
+        margin-bottom: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+  /*    p {
+//  font-size: 16px;
+//  font-family: Arial, sans-serif;
+//  color: #333;
+// } */
+#startButton
+ {
+  display: block;
+  margin: 0 auto; /* center the element horizontally */
+  text-align: center; /* center the text within the element */
+}
+#container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer {
+  background-color: #eee; /* add a light grey background color */
+  padding: 20px; /* add some padding to the footer */
+  text-align: center; /* center the text within the footer */
+}
+
+footer p {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0; /* remove the default margin for the paragraphs */
+}
+#timer {
+  /* Position the timer element in the top right corner */
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  /* Add a background color to the timer */
+  background-color: yellow;
+}
+
+
+#description {
+  color: blue;
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+
+}
+.results-message {
+  /* Add some styling for the results message */
+  font-size: 28px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+}
+
+
+
+    </style>
+  </head>
+  <footer>
+    <p>Designer: Abhijit Dey</p>
+    <p>Designation: Lecturer in Electrical Engineering, Sidhu Kanhu Birsa Polytechnic</p>
+  </footer>
+  <body>
+    <!-- Add a scoring mechanism to the quiz -->
+    <script>
+      var score = 0; // Initialize the score to 0
+
+      // Function to update the score
+      function updateScore(value) {
+        score += value;
+      }
+
+      // Function to display the results
+      function showResults() {
+        // Get the quiz container element
+        var quizContainer = document.getElementById("quiz");
+
+        // Remove the quiz questions
+        quizContainer.innerHTML = ""
+        
+
+        // Add a message to display the score
+        quizContainer.innerHTML ="<p class='results-message'>Congratulation! Your score is : " + score + "/5</p>";
+
+
+
+      }
+      
+
+    </script>
+    
+    <!-- Add a submit button to the quiz -->
+
+    <!-- Create a container for the quiz -->
+    <div id="container1">
+        <button id="startButton">Start Quiz 3</button>
+        <p id="description">This is a Fill in the blank type Quiz.This quiz is designed to test your knowledge of the 8051 microcontroller. It covers topics such as memory types, interrupts, and instruction sets. Good luck!</p>
+      
+    </div>
+    
+      
+    
+    <br><br>
+    <div id="timer"></div>
+    <form id="quizForm" class="quiz-form" style="display: none;">
+    <div id="quiz">
+      <!-- Add the quiz questions -->
+ <p class="question">What is the name of the register that holds the address of the next instruction to be executed in the 8051 microcontroller?</p>
+  <div class="answer">
+  <input type="text" name="question1" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'pc' ? 1 : 0)">
+</div>
+<p class="question">What is the name of the register that holds the 8-bit status of the 8051 microcontroller?</p>
+  <div class="answer">
+  <input type="text" name="question2" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'psw' ? 1 : 0)">
+</div>
+<p class="question">What is the maximum number of external devices that can be connected to Port 3 on the 8051 microcontroller?</p>
+  <div class="answer">
+  <input type="text" name="question3" placeholder="Enter your answer here" onchange="updateScore(this.value == '8' ? 1 : 0)">
+</div>
+<p class="question">Which memory space on the 8051 microcontroller is used to store data that needs to be accessed quickly?</p>
+  <div class="answer">
+  <input type="text" name="question4" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'sfr' ? 1 : 0)">
+</div>
+<p class="question">Which memory space on the 8051 microcontroller is used to store data that does not need to be accessed quickly?</p>
+  <div class="answer">
+  <input type="text" name="question5" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'xdata' ? 1 : 0)">
+</div>
+<p class="question">Which memory space on the 8051 microcontroller is used to store programs that need to be executed?</p>
+  <div class="answer">
+  <input type="text" name="question6" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'code' ? 1 : 0)">
+</div>
+<p class="question">Which memory space on the 8051 microcontroller is used to store data that is retained even after the power is turned off?</p>
+  <div class="answer">
+  <input type="text" name="question7" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'idata' ? 1 : 0)">
+</div>
+<p class="question">Which memory space on the 8051 microcontroller is used to store temporary data that is lost when the power is turned off?</p>
+  <div class="answer">
+  <input type="text" name="question8" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'sdata' ? 1 : 0)">
+</div>
+<p class="question">Which memory space on the 8051 microcontroller is used to store data that is accessed using indirect addressing?</p>
+  <div class="answer">
+<p class="question">ADD A, R0 is a ________addressing mode operation. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question9" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'register' ? 1 : 0)">
+</div>
+<p class="question">The 8051 microcontroller has a total of _____ interrupt vectors. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question10" placeholder="Enter your answer here" onchange="updateScore(this.value == '5' ? 1 : 0)">
+</div>
+<p class="question">The 8051 microcontroller has a total of _____ address spaces. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question11" placeholder="Enter your answer here" onchange="updateScore(this.value == '3' ? 1 : 0)">
+</div>
+<p class="question">The 8051 microcontroller has a total of _____ types of memory. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question12" placeholder="Enter your answer here" onchange="updateScore(this.value == '3' ? 1 : 0)">
+</div>
+<p class="question">The 8051 microcontroller has a total of _____ I/O ports. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question13" placeholder="Enter your answer here" onchange="updateScore(this.value == '4' ? 1 : 0)">
+</div>
+<p class="question">The 8051 microcontroller has a total of _____ input/output lines. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question14" placeholder="Enter your answer here" onchange="updateScore(this.value == '32' ? 1 : 0)">
+</div>
+<p class="question">The 8051 microcontroller has a total of _____ stack levels. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question15" placeholder="Enter your answer here" onchange="updateScore(this.value == '3' ? 1 : 0)">
+</div>
+<p class="question">The 8051 microcontroller has a clock frequency of _____ MHz. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question16" placeholder="Enter your answer here" onchange="updateScore(this.value=='11'?1:0)">
+<p class="question">The instruction SETB C sets the carry flag to _____. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question17" placeholder="Enter your answer here" onchange="updateScore(this.value == '1' ? 1 : 0)">
+</div>
+<p class="question">The instruction JB is used to jump to a specific memory location if the carry flag is _____. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question18" placeholder="Enter your answer here" onchange="updateScore(this.value == '1' ? 1 : 0)">
+</div>
+<p class="question">The instruction JNB is used to jump to a specific memory location if the carry flag is _____. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question19" placeholder="Enter your answer here" onchange="updateScore(this.value == '0' ? 1 : 0)">
+</div>
+<p class="question">The instruction ANL is used to perform a _____ operation on two operands. Fill in the blank.</p>
+  <div class="answer">
+  <input type="text" name="question20" placeholder="Enter your answer here" onchange="updateScore(this.value.toLowerCase() == 'bitwise and' ? 1 : 0)">
+</div>
+      
+      <button onclick="showResults()">Submit</button>
+      <!-- Add the rest of the quiz questions -->
+    </div>
+    
+    <script>
+        // Get start button and form elements
+        var startButton = document.getElementById("startButton");
+        var quizForm = document.getElementById("quizForm");
+        
+        // Add event listener to start button
+        startButton.addEventListener("click", function() {
+          // Check if the camera is on
+        //  navigator.mediaDevices.getUserMedia({ video: true })
+         //   .then(function(stream) {
+              // Camera is on, hide start button and show quiz form
+              startButton.style.display = "none";
+              quizForm.style.display = "block";
+              document.getElementById("description").style.display = "none";
+
+              // Set countdown timer
+              var timeLeft = 600; // 10 minutes
+              var timerId = setInterval(countdown, 1000);
+              
+              function countdown() {
+                if (timeLeft == 0) {
+                  clearTimeout(timerId);
+                  // Submit quiz when timer reaches 0
+                  document.getElementById("quizForm").submit();
+                } else {
+                  document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft + " seconds";
+                  timeLeft--;
+                }
+              }
+          //  })
+        })
+            .catch(function(error) {
+              // Camera is off, show error message
+              alert("Please enable your camera to start the quiz.");
+            
+            });
+            
+            </script>
+<!-- Create a container for the quiz link -->
+<div id="other-quiz-container" style="display: none;">
+    <!-- Create a link to the other quiz page -->
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz2.html">Quiz2</a>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz1.html">Quiz3</a>
+
+  </div>
+  
+  <script>
+    // Function to show the other quiz link
+    function showOtherQuizLink() {
+      // Get the other quiz container element
+      var otherQuizContainer = document.getElementById("other-quiz-container");
+  
+      // Show the other quiz link
+      otherQuizContainer.style.display = "block";
+    }
+  
+    // Function to display the results
+    function showResults() {
+      // Get the quiz container element
+      var quizContainer = document.getElementById("quiz");
+  
+      // Remove the quiz questions
+      quizContainer.innerHTML = "";
+  
+      // Add a message to display the score
+      quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "20</p>";
+  
+      // Show the other quiz link
+      showOtherQuizLink();
+    }
+  </script>
+  
+
+</body>
+
+</html>

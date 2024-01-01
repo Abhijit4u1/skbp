@@ -1,0 +1,338 @@
+<html>
+  <head>
+    <style>
+      /* Add some styling to the quiz */
+      .quiz {
+        font-family: Arial;
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        width: 50%;
+      }
+      .quiz-form {
+       display: block;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .answer {
+        margin-bottom: 10px;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+  /*    p {
+//  font-size: 16px;
+//  font-family: Arial, sans-serif;
+//  color: #333;
+// } */
+#startButton
+ {
+  display: block;
+  margin: 0 auto; /* center the element horizontally */
+  text-align: center; /* center the text within the element */
+}
+#container1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+footer {
+  background-color: #eee; /* add a light grey background color */
+  padding: 20px; /* add some padding to the footer */
+  text-align: center; /* center the text within the footer */
+}
+
+footer p {
+  font-size: 14px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0; /* remove the default margin for the paragraphs */
+}
+#timer {
+  /* Position the timer element in the top right corner */
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1;
+
+  /* Add a background color to the timer */
+  background-color: yellow;
+}
+
+
+#description {
+  color: blue;
+  font-family: Arial;
+  font-size: 16px;
+  text-align: center;
+
+}
+
+button {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.results-message {
+  text-align: center;
+  font-size: 24px;
+  color: #4caf50; /* change the text color */
+  font-family: 'Roboto', sans-serif; /* use a more attractive font */
+  padding: 20px; /* add some padding around the text */
+}
+
+
+
+    </style>
+  </head>
+  <footer>
+    <p>Designer: Abhijit Dey</p>
+    <p>Designation: Lecturer in Electrical Engineering, Sidhu Kanhu Birsa Polytechnic</p>
+  </footer>
+  <body>
+    <!-- Add a scoring mechanism to the quiz -->
+    
+    <script>
+      var score = 0; // Initialize the score to 0
+    
+      // Function to update the score
+      function updateScore(value) {
+        score += value;
+      }
+    
+      // Function to display the results
+      function showResults() {
+        // Get the quiz container element
+        var quizContainer = document.getElementById("quiz");
+    
+        // Remove the quiz questions
+        quizContainer.innerHTML = "";
+    
+        // Add a message to display the score
+        quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/5</p>";
+
+      }
+    </script>
+    
+    
+    <!-- Add a submit button to the quiz -->
+
+    <!-- Create a container for the quiz -->
+    <div id="container1">
+        <button id="startButton">Start Quiz </button>
+        <p id="description">This quiz is designed to test your knowledge of IEGS subject. It covers topics related to coal based power plant. Good luck!</p>
+      
+    </div>
+    
+      
+    
+    <br><br>
+    <div id="timer"></div>
+    <form id="quizForm" class="quiz-form" style="display: none;">
+    <div id="quiz">
+      <!-- Add the quiz questions -->
+
+
+
+      <p class="question">1. What is the primary function of a boiler in a coal-based thermal power plant?</p>
+<div class="answer">
+   <input type="radio" name="question1" value="0" onclick="updateScore(0)">To generate electrical power directly.<br>
+   <input type="radio" name="question1" value="1" onclick="updateScore(1)">To convert water into steam for driving the steam turbine.<br>
+   <input type="radio" name="question1" value="0" onclick="updateScore(0)">To cool the condenser in the power generation process.<br>
+   <input type="radio" name="question1" value="0" onclick="updateScore(0)">To remove impurities from coal before combustion.<br>
+</div>
+      
+<p class="question">2. Which equipment is responsible for reheating steam in a coal-based thermal power plant?</p>
+<div class="answer">
+   <input type="radio" name="question2" value="0" onclick="updateScore(0)">Economiser<br>
+   <input type="radio" name="question2" value="0" onclick="updateScore(0)">Air Pre-Heater<br>
+   <input type="radio" name="question2" value="1" onclick="updateScore(1)">Reheater<br>
+   <input type="radio" name="question2" value="0" onclick="updateScore(0)">Feed Water Heater<br>
+</div>
+
+<p class="question">3. What is the basic concept of a Super Critical Boiler?</p>
+<div class="answer">
+   <input type="radio" name="question3" value="0" onclick="updateScore(0)">It uses coal with high calorific value.<br>
+   <input type="radio" name="question3" value="1" onclick="updateScore(1)">It operates above the critical pressure and temperature of water.<br>
+   <input type="radio" name="question3" value="0" onclick="updateScore(0)">It has multiple reheating stages.<br>
+   <input type="radio" name="question3" value="0" onclick="updateScore(0)">It is designed for fluidized bed combustion.<br>
+</div>
+      
+<p class="question">4. What is the main function of an Economiser in a coal-based thermal power plant?</p>
+<div class="answer">
+   <input type="radio" name="question4" value="0" onclick="updateScore(0)">To increase the temperature of feedwater.<br>
+   <input type="radio" name="question4" value="1" onclick="updateScore(1)">To preheat the feedwater using waste heat from flue gases.<br>
+   <input type="radio" name="question4" value="0" onclick="updateScore(0)">To cool the steam before entering the turbine.<br>
+   <input type="radio" name="question4" value="0" onclick="updateScore(0)">To reduce air pollution by filtering flue gases.<br>
+</div>
+
+<p class="question">5. Which equipment is responsible for removing suspended particles from flue gases in a coal-based thermal power plant?</p>
+<div class="answer">
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">Condenser<br>
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">Super Heater<br>
+   <input type="radio" name="question5" value="1" onclick="updateScore(1)">Electrostatic Precipitator (ESP)<br>
+   <input type="radio" name="question5" value="0" onclick="updateScore(0)">Feed Water Heater<br>
+</div>
+      
+<p class="question">6. What is the calorific value of coal?</p>
+<div class="answer">
+   <input type="radio" name="question6" value="1" onclick="updateScore(1)">It varies depending on the type but typically ranges from 2500 to 7000 kcal/kg.<br>
+   <input type="radio" name="question6" value="0" onclick="updateScore(0)">It is a constant value of 5000 kcal/kg for all types of coal.<br>
+   <input type="radio" name="question6" value="0" onclick="updateScore(0)">It is not relevant to the power generation process.<br>
+   <input type="radio" name="question6" value="0" onclick="updateScore(0)">It is always above 10,000 kcal/kg.<br>
+</div>
+      
+<p class="question">7. Name a coal-based thermal power plant in India and mention its location.</p>
+<div class="answer">
+   <input type="radio" name="question7" value="0" onclick="updateScore(0)">XYZ Power Plant, located in the southern region.<br>
+   <input type="radio" name="question7" value="1" onclick="updateScore(1)">Talcher Super Thermal Power Station, located in Odisha.<br>
+   <input type="radio" name="question7" value="0" onclick="updateScore(0)">Sunrise Energy Plant, located in the western region.<br>
+   <input type="radio" name="question7" value="0" onclick="updateScore(0)">Evergreen Power Station, located in the northern region.<br>
+</div>
+
+
+<p class="question">8. What is the electrical efficiency of a coal-based thermal power plant?</p>
+<div class="answer">
+   <input type="radio" name="question8" value="1" onclick="updateScore(1)">Typically ranges from 30% to 40%.<br>
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">Always above 60%.<br>
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">Depends on the color of coal used.<br>
+   <input type="radio" name="question8" value="0" onclick="updateScore(0)">Varies based on the geographical location of the power plant.<br>
+</div>
+    
+
+<p class="question">9. What is the function of a Spray Pond in a thermal power plant?</p>
+<div class="answer">
+   <input type="radio" name="question9" value="0" onclick="updateScore(0)">To store coal for future use.<br>
+   <input type="radio" name="question9" value="0" onclick="updateScore(0)">To control the emission of particulate matter.<br>
+   <input type="radio" name="question9" value="1" onclick="updateScore(1)">To cool the circulating water from the condenser.<br>
+   <input type="radio" name="question9" value="0" onclick="updateScore(0)">To heat the cooling water before entering the condenser.<br>
+</div>
+      
+<p class="question">10. What is the concept of a Zero Discharge System in a thermal power plant?</p>
+<div class="answer">
+   <input type="radio" name="question10" value="1" onclick="updateScore(1)">It aims to release no liquid effluent or waste into the environment.<br>
+   <input type="radio" name="question10" value="0" onclick="updateScore(0)">It refers to the absence of flue gas emissions.<br>
+   <input type="radio" name="question10" value="0" onclick="updateScore(0)">It emphasizes zero downtime for the power plant.<br>
+   <input type="radio" name="question10" value="0" onclick="updateScore(0)">It focuses on zero fuel consumption.<br>
+</div>
+<p class="question">11. What is the basic concept of the Rankine Cycle in the context of thermal power generation?</p>
+   <div class="answer">
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">It is a process for coal formation.<br>
+      <input type="radio" name="question11" value="1" onclick="updateScore(1)">It is an idealized thermodynamic cycle for converting heat into work.<br>
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">It is a method for ash handling in power plants.<br>
+      <input type="radio" name="question11" value="0" onclick="updateScore(0)">It is a classification system for coal types.<br>
+   </div>
+   <p class="question">12. What is the role of an ID (Induced Draft) Fan in a coal-based thermal power plant?</p>
+   <div class="answer">
+      <input type="radio" name="question12" value="0" onclick="updateScore(0)">To induce the combustion process.<br>
+      <input type="radio" name="question12" value="1" onclick="updateScore(1)">To draw flue gases from the furnace and maintain a negative pressure.<br>
+      <input type="radio" name="question12" value="0" onclick="updateScore(0)">To regulate the temperature of the steam.<br>
+      <input type="radio" name="question12" value="0" onclick="updateScore(0)">To cool the condenser.<br>
+   </div>
+   <p class="question">13. What are the primary advantages of using Fluidised Bed Combustion in a coal-based thermal power plant?</p>
+   <div class="answer">
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">Higher fuel consumption.<br>
+      <input type="radio" name="question13" value="1" onclick="updateScore(1)">Better combustion efficiency, lower emissions, and the ability to use a variety of fuels.<br>
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">Limited flexibility in fuel choices.<br>
+      <input type="radio" name="question13" value="0" onclick="updateScore(0)">Reduced control over combustion temperature.<br>
+   </div>
+   <p class="question">14. What is the significance of using a De-aerator in a coal-based thermal power plant?</p>
+   <div class="answer">
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">To reduce the temperature of steam.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">To control the flow of air in the combustion process.<br>
+      <input type="radio" name="question14" value="1" onclick="updateScore(1)">To remove dissolved gases, mainly oxygen, from feedwater.<br>
+      <input type="radio" name="question14" value="0" onclick="updateScore(0)">To increase the efficiency of the condenser.<br>
+   </div>
+   <p class="question">15. What is the basic principle behind the operation of a Steam Turbine in a coal-based thermal power plant?</p>
+   <div class="answer">
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">To generate steam for the boiler.<br>
+      <input type="radio" name="question15" value="1" onclick="updateScore(1)">To convert thermal energy from steam into mechanical energy, driving a generator.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">To compress air for combustion.<br>
+      <input type="radio" name="question15" value="0" onclick="updateScore(0)">To cool the condenser.<br>
+   </div>
+      
+      <button onclick="showResults()">Submit</button>
+      <!-- Add the rest of the quiz questions -->
+    </div>
+    
+    <script>
+        // Get start button and form elements
+        var startButton = document.getElementById("startButton");
+        var quizForm = document.getElementById("quizForm");
+        
+        // Add event listener to start button
+        startButton.addEventListener("click", function() {
+          // Check if the camera is on
+         // navigator.mediaDevices.getUserMedia({ video: true }) //turning off camera
+          //  .then(function(stream) {
+              // Camera is on, hide start button and show quiz form
+              startButton.style.display = "none";
+              quizForm.style.display = "block";
+              document.getElementById("description").style.display = "none";
+
+              // Set countdown timer
+              var timeLeft = 600; // 10 minutes
+              var timerId = setInterval(countdown, 1000);
+              
+              function countdown() {
+                if (timeLeft == 0) {
+                  clearTimeout(timerId);
+                  // Submit quiz when timer reaches 0
+                  document.getElementById("quizForm").submit();
+                } else {
+                  document.getElementById("timer").innerHTML = "Time remaining: " + timeLeft + " seconds";
+                  timeLeft--;
+                }
+              }
+           // })
+        })
+            .catch(function(error) {
+              // Camera is off, show error message
+              alert("Please enable your camera to start the quiz.");
+            
+            });
+            
+            </script>
+<!-- Create a container for the quiz link -->
+<div id="other-quiz-container" style="display: none;">
+    <!-- Create a link to the other quiz page -->
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz2.html"> Quiz2  </a>
+    <a href="https://abhijit4u1.github.io/skbp.github.io/Quiz3.html"> Quiz3  </a>
+
+  </div>
+  
+  <script>
+    // Function to show the other quiz link
+    function showOtherQuizLink() {
+      // Get the other quiz container element
+      var otherQuizContainer = document.getElementById("other-quiz-container");
+  
+      // Show the other quiz link
+      otherQuizContainer.style.display = "block";
+    }
+  
+    // Function to display the results
+    function showResults() {
+      // Get the quiz container element
+      var quizContainer = document.getElementById("quiz");
+  
+      // Remove the quiz questions
+      quizContainer.innerHTML = "";
+  
+      // Add a message to display the score
+      quizContainer.innerHTML = "<p class='results-message'>Congratulations! Your score is: " + score + "/15</p>";
+  
+      // Show the other quiz link
+      showOtherQuizLink();
+    }
+  </script>
+  
+
+</body>
+
+</html>
