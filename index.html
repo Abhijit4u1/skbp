@@ -3,17 +3,20 @@
 <head>
   <style>
     body {
-      background-color: #f5f5f5;
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f5f5f5;
     }
 
     .container {
       background-color: #ffffff;
       border: 1px solid #ddd;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 20px;
       padding: 20px;
       width: 50%;
       text-align: center;
@@ -55,11 +58,11 @@
       background-color: #ffffff;
       border: 1px solid #ddd;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 20px;
       padding: 20px;
       width: 50%;
       text-align: center;
       display: none;
+      margin-top: 20px;
     }
 
     .quiz-links-container p {
@@ -89,14 +92,28 @@
       bottom: 0;
       width: 100%;
     }
+
+    .hero {
+      background: url('https://example.com/your-hero-image.jpg') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Create a login form container -->
+  <!-- Hero Section -->
+  <div class="hero">
+    <!-- You can customize the hero content here -->
+    <h1 style="color: white; font-size: 36px;">Welcome to the Quiz Module!</h1>
+  </div>
+
+  <!-- Login Form Container -->
   <div class="container">
     <form action="#" method="get" onsubmit="return validateLogin(event)">
-      <p>Welcome to this Quiz Module (V1.0) On Syllabus of West Bengal State Council of Technical & Vocational Education and Skill Development (Technical Education Division)! Please enter your name, registration number, and college name to start:</p>
+      <p>Please enter your name, registration number, and college name to start:</p>
       <label for="name">Name:</label><br>
       <input type="text" id="name" name="name" required><br>
       <label for="reg-no">Registration Number:</label><br>
@@ -109,9 +126,9 @@
     </form>
   </div>
 
-  <!-- Create a container for the quiz links -->
+  <!-- Quiz Links Container -->
   <div class="quiz-links-container">
-    <p>Welcome to this Quiz Module (V1.0). Please choose from the following quizzes to test your knowledge:</p>
+    <p>Please choose from the following quizzes to test your knowledge:</p>
     <a href="https://abhijit4u1.github.io/skbp.github.io/selector.html" class="quiz-link">Visit to MCQ Quiz Bank Page</a>
   </div>
 
